@@ -1,0 +1,107 @@
+.home-page-reviews-section-container {
+  background-color: #ececec;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 3rem;
+}
+
+.home-page-reviews-section-title {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-page-reviews-section-title h1 {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.home-page-reviews-section-title h1 span {
+  font-style: normal;
+}
+
+.home-page-reviews-section-title-right-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-page-reviews-section-title-right-content-boxs {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  padding: 10px 20px;
+  gap: 20px;
+  border-radius: 10px;
+  height: 70px;
+  width: 200px;
+}
+
+.reviews-section-title-right-content-boxs-logo-img {
+  height: 40px;
+}
+
+.home-page-reviews-section-title-right-content-inner-boxs p {
+  margin: 0;
+}
+
+.home-page-reviews-section-content {
+  max-width: 1300px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.home-page-reviews-section-content-box {
+  background-color: #fff;
+  width: 450px;
+  height: 450px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 20px;
+}
+
+.home-page-reviews-section-content-box p {
+  font-size: 18px;
+}
+
+.review-qoute {
+  font-size: 24px !important;
+  margin: 0;
+  font-weight: bold;
+  color: #627a93;
+}
+
+@media (max-width: 768px) {
+  .home-page-reviews-section-container {
+    padding: 3rem 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .home-page-reviews-section-title {
+    flex-direction: column;
+  }
+  .home-page-reviews-section-title-right-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-page-reviews-section-title-right-content-boxs {
+    width: 150px;
+    gap: 10px;
+    padding: 10px;
+  }
+  .home-page-reviews-section-content {
+    flex-direction: column;
+  }
+
+  .home-page-reviews-section-content-box {
+    width: 350px;
+    height: auto;
+  }
+}

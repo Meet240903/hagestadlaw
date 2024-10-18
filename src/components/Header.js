@@ -3,6 +3,7 @@ import headerLogo from '../assets/images/headerLogo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../assets/css/header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,9 @@ const Header = () => {
         <>
             <div className='header-page-section-container'>
                 <div className='header-page-section-logo'>
-                    <img src={headerLogo} className='img-fluid' alt='header-logo' />
+                    <Link to='/'>
+                        <img src={headerLogo} className='img-fluid' alt='header-logo' />
+                    </Link>
                 </div>
                 <div className='header-page-section-mobile-contact-informations'>
                     <button><FontAwesomeIcon icon={faPhone} /></button>

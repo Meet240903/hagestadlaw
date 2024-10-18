@@ -1,0 +1,122 @@
+.home-page-top-section-container {
+  background-image: url("../../images/homeImgs/topSectionBgImg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5rem 0 2rem 5rem;
+}
+
+.home-page-top-section-content {
+  color: #fff;
+  max-width: 600px;
+}
+
+.home-page-top-section-content h1 {
+  font-size: 60px;
+}
+
+.title-span {
+  font-family: Playfair-italic, sans-serif;
+  font-style: italic;
+}
+
+.home-page-top-section-content p {
+  font-size: 18px;
+}
+
+.home-page-top-section-content ul {
+  list-style-type: disc;
+}
+
+.home-page-top-section-content ul li {
+  font-size: 20px;
+  line-height: 2.2rem;
+}
+
+.home-page-top-section-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 0 0;
+}
+
+.home-page-top-section-bottom-content-button button {
+  border: none;
+  background-color: #627a93;
+  color: #fff;
+  border-radius: 50px;
+  padding: 25px 35px;
+  font-size: 18px;
+}
+
+.home-page-top-section-bottom-content-box {
+  display: flex;
+  gap: 50px;
+  width: 700px;
+  background-color: #0000007d;
+  color: #fff;
+  padding: 30px 50px;
+  border-radius: 50px;
+}
+
+.home-page-top-section-bottom-content-box-inner-content {
+  max-width: 150px;
+}
+
+.home-page-top-section-bottom-content-box-inner-content h1 {
+  font-weight: normal;
+  font-size: 50px;
+}
+
+.home-page-top-section-bottom-content-box-inner-content small {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .home-page-top-section-bottom-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .home-page-top-section-content h1 {
+    font-size: 40px;
+  }
+  .home-page-top-section-content ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-page-top-section-content ul li {
+    font-size: 16px;
+  }
+  .home-page-top-section-content {
+    padding: 1rem;
+  }
+  .home-page-top-section-container {
+    padding: 0;
+  }
+  .home-page-top-section-bottom-content {
+    margin: 0;
+  }
+  .home-page-top-section-bottom-content-button {
+    padding: 1rem;
+  }
+  .home-page-top-section-bottom-content-button button {
+    width: 100%;
+    font-size: 16px;
+  }
+  .home-page-top-section-bottom-content-box {
+    justify-content: space-between;
+    width: 100%;
+    background-color: #0000007d;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 0;
+  }
+  .home-page-top-section-bottom-content-box-inner-content {
+    width: 80px;
+  }
+  .home-page-top-section-bottom-content-box-inner-content h1 {
+    font-size: 24px;
+  }
+}

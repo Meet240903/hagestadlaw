@@ -91,6 +91,10 @@ small {
   gap: 20px;
 }
 
+.footer-page-section-main-left-mobile-menu-content {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .footer-page-section-container {
     padding: 2rem 0 0 0;
@@ -110,6 +114,9 @@ small {
   .footer-page-section-main-middle-inner-content1 {
     grid-template-columns: 1fr;
     row-gap: 10px;
+  }
+  .footer-page-section-main-left-menu-content {
+    display: none;
   }
   .footer-page-section-main-middle-inner-content p {
     width: 100px;
@@ -147,5 +154,13 @@ small {
   }
   .footer-page-section-bottom-content p {
     font-size: 14px;
+  }
+  .footer-page-section-main-left-mobile-menu-content {
+    display: block;
+    margin: 4rem 0 2rem 0;
+  }
+  .footer-page-section-main-left-mobile-menu-content p {
+    font-size: 14px;
+    color: gray;
   }
 }

@@ -60,6 +60,10 @@ const Footer = () => {
                                 ))
                             }
                         </div>
+                        <div className='footer-page-section-main-left-mobile-menu-content'>
+                            <p>Blog</p>
+                            <p>Contact Us</p>
+                        </div>
                     </div>
                     <div className='col-md-2 footer-page-section-main-right-content'>
                         <div className='footer-page-section-main-right-inner-content'>
