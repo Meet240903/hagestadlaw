@@ -4,6 +4,7 @@ import HomePageReviewSection from './homePageSections/HomePageReviewSection'
 import HomePageLegalServiceSection from './homePageSections/HomePageLegalServiceSection'
 import HomePageMiddleSection from './homePageSections/HomePageMiddleSection'
 import HomePageTeamSection from './homePageSections/HomePageTeamSection'
+import HomePageBottomSection from './homePageSections/HomePageBottomSection'
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <HomePageLegalServiceSection />
             <HomePageMiddleSection />
             <HomePageTeamSection />
+            <HomePageBottomSection />
         </>
     )
 }

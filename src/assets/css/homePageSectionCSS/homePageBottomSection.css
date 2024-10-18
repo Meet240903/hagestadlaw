@@ -1,0 +1,132 @@
+.home-page-bottom-section-container {
+  background-color: #ececec;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 7rem;
+}
+
+.home-page-bottom-section-left-content h1 {
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.home-page-bottom-section-left-content h1 span {
+  font-style: italic;
+}
+
+.home-page-bottom-section-left-content p {
+  font-size: 18px;
+}
+
+.home-page-bottom-section-right-content-box {
+  background: linear-gradient(91.94deg, #627a93 19.16%, #39648f 92.32%);
+  color: #fff;
+  padding: 3rem;
+  border-radius: 32px;
+}
+
+.home-page-bottom-section-right-content-box h3 {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.home-page-bottom-section-right-content-box p {
+  font-size: 18px;
+  margin: 2rem 0;
+}
+
+.home-page-bottom-section-right-content-box button {
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50px;
+  padding: 25px 35px;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+
+.home-page-bottom-section-right-content-box button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.home-page-bottom-section-contact-right-content-contact-information {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-page-bottom-section-contact-informations {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-page-bottom-section-contact-content p {
+  margin: 0;
+}
+
+.home-page-bottom-section-contact-content small {
+  color: #434d48;
+  font-size: 12px;
+}
+
+.home-page-bottom-section-contact-informations button {
+  border-radius: 50%;
+  border: none;
+  background-color: #627a93;
+  color: #fff;
+  padding: 8px 13px;
+}
+
+.home-page-bottom-section-left-content-map-section iframe {
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 400px;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .home-page-bottom-section-container {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 3rem 1rem;
+  }
+
+  .home-page-bottom-section-left-content,
+  .home-page-bottom-section-right-content {
+    padding: 0 !important;
+  }
+  .home-page-bottom-section-left-content h1 {
+    font-size: 30px;
+  }
+
+  .home-page-bottom-section-left-content p {
+    font-size: 16px;
+  }
+
+  .home-page-bottom-section-content {
+    gap: 40px;
+  }
+
+  .home-page-bottom-section-left-content-map-section iframe {
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 300px;
+    width: 100%;
+  }
+  .home-page-bottom-section-right-content-box {
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+  .home-page-bottom-section-right-content-box h3 {
+    font-size: 30px;
+  }
+  .home-page-bottom-section-right-content-box button {
+    width: 100%;
+    padding: 20px;
+  }
+  .home-page-bottom-section-contact-content p {
+    font-size: 14px;
+  }
+}
