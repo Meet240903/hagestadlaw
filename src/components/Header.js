@@ -1,17 +1,108 @@
 import React, { useState } from 'react';
 import headerLogo from '../assets/images/headerLogo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faBars, faTimes, faChevronDown, faChevronRight, faArrowRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import '../assets/css/header.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const [hoveredTitle, setHoveredTitle] = useState(null); // Track hovered title
+    const [ShowPracticeAreaMenu, setShowPracticeAreaMenu] = useState(false)
+    const [ShowOurTeamMenu, setShowOurTeamMenu] = useState(false)
+    const [ShowAeraWeServeMenu, setShowAeraWeServeMenu] = useState(false)
     // Toggle menu visibility on mobile
     const handleToggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        setShowAeraWeServeMenu(false);
+        setShowOurTeamMenu(false);
+        setShowPracticeAreaMenu(false);
     };
+
+    const practiceAreaDropDownData = [
+        {
+            title: "Estates & Trusts",
+            icon: faChevronRight,
+            subDropDownData: [
+                { title: "Estate Planning" },
+                { title: "Probate & Estate Administration" },
+                { title: "Estate Litigation" },
+            ]
+        },
+        {
+            title: "Civil Litigation",
+            icon: faChevronRight,
+            subDropDownData: [
+                { title: "Bad Faith" },
+                { title: "Dram Shop Defense" },
+                { title: "Professional Negligence" },
+                { title: "Insurance Defense" },
+            ]
+        },
+        {
+            title: "Business Law",
+            icon: faChevronRight,
+            subDropDownData: [
+                { title: "Business Litigation & Disputes" },
+                { title: "Business Contracts" },
+            ]
+        },
+        {
+            title: "Real Estate Law",
+            icon: faArrowRight,
+            iconRotate: true,
+        },
+    ];
+
+    const ourTeamDropDownData = [
+        { title: "G. Patrick HagEstad" },
+        { title: "David J. HagEstad" },
+        { title: "Brien B. Birge" },
+        { title: "Our Staff" },
+    ]
+
+    const areaWeServeArizonaDropDownData = [
+        {
+            title: "Buckeye",
+            subMenuData: [
+                { title: "Buckeye Estate Planning Lawyers" },
+                { title: "Buckeye Estate & Probate Lawyers" },
+                { title: "Buckeye Real Estate Lawyers" },
+            ]
+        },
+        {
+            title: "Phoenix",
+            subMenuData: [
+                { title: "Phoenix Real Estate Lawyers" },
+                { title: "Phoenix Business Lawyers" },
+                { title: "Phoenix Estate & Probate Lawyers" },
+            ]
+        },
+        {
+            title: "Sun City",
+            subMenuData: [
+                { title: "Sun City Estate Planning Lawyers" },
+            ]
+        },
+        {
+            title: "Surprise",
+            subMenuData: [
+                { title: "Surprise Estate Planning Lawyers" },
+                { title: "Surprise Probate Lawyers" },
+                { title: "Surprise Wills & Trust Lawyers" },
+            ]
+        },
+    ]
+
+    const areaWeServeMontanaDropDownData = [
+        { title: "Billings Trusts & Estates Lawyers" },
+        { title: "Butte Trusts & Estates Lawyers" },
+        { title: "Great Falls Trusts & Estates Lawyers" },
+        { title: "Helena Trusts & Estates Lawyers" },
+        { title: "Kalispell Trusts & Estates Lawyers" },
+        { title: "Missoula Trusts & Estates Lawyers" },
+        { title: "Whitefish Trusts & Estates Lawyers" },
+    ]
 
     return (
         <>
@@ -37,11 +128,152 @@ const Header = () => {
                     <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
                 </button>
                 <div className={`header-page-section-menu-content ${isMenuOpen ? 'open' : ''}`}>
-                    <p>Practice Area</p>
-                    <p>Cases</p>
-                    <p>Our Team</p>
-                    <p>Areas We Serve</p>
-                    <p>Contact Us</p>
+                    <p
+                        onMouseEnter={() => { setShowAeraWeServeMenu(false); setShowPracticeAreaMenu(true); setShowOurTeamMenu(false) }}
+                    >Practice Area <FontAwesomeIcon icon={faChevronDown} style={{ fontSize: '10px' }} /></p>
+                    <div className={`header-page-section-menu-practice-area-dropdown-box ${ShowPracticeAreaMenu ? 'practice-open' : ''}`}
+                        onMouseLeave={() => setShowPracticeAreaMenu(false)}
+                    >
+                        <h5 className='submenu-back-button'
+                            onClick={() => { setShowAeraWeServeMenu(false); setShowPracticeAreaMenu(false); setShowOurTeamMenu(false) }}
+                        ><FontAwesomeIcon icon={faChevronLeft} style={{ fontSize: '12px' }} /> Back to the Menu</h5>
+                        <div className='row mx-0 header-page-section-menu-practice-area-dropdown-box-content'>
+                            <div className='col-md-6 header-page-section-menu-practice-area-dropdown-box-left-content'>
+                                <div className='header-page-section-menu-practice-area-dropdown-box-left-inner-content'>
+                                    <h3>Montana</h3>
+                                    {
+                                        practiceAreaDropDownData?.map((data, index) => (
+                                            <p
+                                                key={index}
+                                                onMouseEnter={() => setHoveredTitle(data?.subDropDownData ? index : null)}
+                                            // Set the hovered title
+                                            >
+                                                {data?.title}
+                                                <FontAwesomeIcon
+                                                    icon={data?.icon}
+                                                    style={{
+                                                        fontSize: data?.iconRotate ? '14px' : '10px',
+                                                        margin: '0',
+                                                        transform: data?.iconRotate ? 'rotate(-40deg)' : ''
+                                                    }}
+                                                />
+                                            </p>
+                                        ))
+                                    }
+                                </div>
+                                <div
+                                    className={`header-page-section-menu-practice-area-dropdown-box-left-content-submenu ${hoveredTitle === null ? 'd-none' : ''}`}
+                                    onMouseLeave={() => {
+                                        setHoveredTitle(null); // Hide submenu when leaving
+                                    }}
+                                >
+                                    {
+                                        practiceAreaDropDownData?.map((data, index) => (
+                                            hoveredTitle === index && data?.subDropDownData && ( // Check if subDropDownData exists
+                                                data?.subDropDownData?.map((subData, subIndex) => (
+                                                    <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                ))
+                                            )
+                                        ))
+                                    }
+                                </div>
+
+                            </div>
+                            <div className='col-md-6 header-page-section-menu-practice-area-dropdown-box-right-content'>
+                                <h3>Arizona</h3>
+                                <p>Estates & Trusts <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                <p>Business Law <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                <p>Real Estate Law <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p
+                        onMouseEnter={() => { setShowPracticeAreaMenu(false); setShowOurTeamMenu(false) }}
+                    >Cases</p>
+                    <p
+                        onMouseEnter={() => { setShowAeraWeServeMenu(false); setShowOurTeamMenu(true); setShowPracticeAreaMenu(false) }}
+                    >Our Team <FontAwesomeIcon icon={faChevronDown} style={{ fontSize: '10px' }} /></p>
+                    <div className={`header-page-section-menu-our-team-dropdown-box ${ShowOurTeamMenu ? 'our-team-open' : ''}`}
+                        onMouseLeave={() => setShowOurTeamMenu(false)}
+                    >
+                        <h5 className='submenu-back-button'
+                            onClick={() => { setShowAeraWeServeMenu(false); setShowPracticeAreaMenu(false); setShowOurTeamMenu(false) }}
+                        ><FontAwesomeIcon icon={faChevronLeft} style={{ fontSize: '12px' }} /> Back to the Menu</h5>
+                        {
+                            ourTeamDropDownData?.map((data, index) => (
+                                <p key={index}
+                                    style={{
+                                        fontWeight: index === ourTeamDropDownData?.length - 1 ? 'bold' : '',
+                                    }}
+                                >{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                            ))
+                        }
+                    </div>
+                    <p
+                        onMouseEnter={() => { setShowAeraWeServeMenu(true); setShowOurTeamMenu(false); setShowPracticeAreaMenu(false) }}
+                    >Areas We Serve <FontAwesomeIcon icon={faChevronDown} style={{ fontSize: '10px' }} /></p>
+                    <div className={`header-page-section-menu-area-we-serve-dropdown-box ${ShowAeraWeServeMenu ? 'area-we-serve-open' : ''}`}
+                        onMouseLeave={() => setShowAeraWeServeMenu(false)}
+                    >
+                        <h5 className='submenu-back-button'
+                            onClick={() => { setShowAeraWeServeMenu(false); setShowPracticeAreaMenu(false); setShowOurTeamMenu(false) }}
+                        ><FontAwesomeIcon icon={faChevronLeft} style={{ fontSize: '12px' }} /> Back to the Menu</h5>
+                        <div className='row mx-0 header-page-section-menu-area-we-serve-dropdown-box-content'>
+                            <div className='col-md-6 header-page-section-menu-area-we-serve-dropdown-box-left-content'>
+                                <h3>Montana</h3>
+                                <div className='header-page-section-menu-area-we-serve-dropdown-box-left-inner-content'>
+                                    {
+                                        areaWeServeMontanaDropDownData?.map((data, index) => (
+                                            <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                            <div className='col-md-6 header-page-section-menu-area-we-serve-dropdown-box-right-content'>
+                                <div className='header-page-section-menu-area-we-serve-dropdown-box-right-inner-content'>
+                                    <h3>Ariozona</h3>
+                                    {
+                                        areaWeServeArizonaDropDownData?.map((data, index) => (
+                                            <p
+                                                key={index}
+                                                onMouseEnter={() => setHoveredTitle(data?.subMenuData ? index : null)}
+                                            // Set the hovered title
+                                            >
+                                                {data?.title}
+                                                <FontAwesomeIcon
+                                                    icon={faChevronRight}
+                                                    style={{
+                                                        fontSize: data?.iconRotate ? '14px' : '10px',
+                                                        margin: '0',
+                                                        transform: data?.iconRotate ? 'rotate(-40deg)' : ''
+                                                    }}
+                                                />
+                                            </p>
+                                        ))
+                                    }
+                                </div>
+                                <div
+                                    className={`header-page-section-menu-area-we-serve-dropdown-box-left-content-submenu ${hoveredTitle === null ? 'd-none' : ''}`}
+                                    onMouseLeave={() => {
+                                        setHoveredTitle(null); // Hide submenu when leaving
+                                    }}
+                                >
+                                    {
+                                        areaWeServeArizonaDropDownData?.map((data, index) => (
+                                            hoveredTitle === index && data?.subMenuData && ( // Check if subDropDownData exists
+                                                data?.subMenuData?.map((subData, subIndex) => (
+                                                    <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                ))
+                                            )
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p
+                        onMouseEnter={() => { setShowAeraWeServeMenu(false); setShowOurTeamMenu(false); setShowPracticeAreaMenu(false) }}
+                    >Contact Us</p>
                     <div className='header-page-section-mobile-button'>
                         <button>Free Consultation</button>
                     </div>

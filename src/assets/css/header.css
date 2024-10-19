@@ -38,6 +38,9 @@
   margin: 0;
   font-size: 17px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .header-page-section-menu-content p:hover {
@@ -81,6 +84,99 @@
   display: none;
 }
 
+/* practice area dropdown menu */
+.header-page-section-menu-practice-area-dropdown-box,
+.header-page-section-menu-our-team-dropdown-box,
+.header-page-section-menu-area-we-serve-dropdown-box {
+  position: absolute;
+  background-color: #fff;
+  top: -270%;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  padding: 1rem 7rem;
+  transition: top 0.3s ease; /* Change bottom to top */
+}
+
+.header-page-section-menu-practice-area-dropdown-box.practice-open,
+.header-page-section-menu-our-team-dropdown-box.our-team-open,
+.header-page-section-menu-area-we-serve-dropdown-box.area-we-serve-open {
+  top: 96px;
+}
+
+.header-page-section-menu-practice-area-dropdown-box-left-content h3,
+.header-page-section-menu-practice-area-dropdown-box-right-content h3,
+.header-page-section-menu-area-we-serve-dropdown-box-left-content h3,
+.header-page-section-menu-area-we-serve-dropdown-box-right-content h3 {
+  font-weight: normal;
+  font-size: 26px;
+  margin-bottom: 1rem;
+}
+
+.header-page-section-menu-practice-area-dropdown-box-left-content p,
+.header-page-section-menu-practice-area-dropdown-box-right-content p,
+.header-page-section-menu-area-we-serve-dropdown-box-right-inner-content p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 2.2rem;
+  font-size: 16px;
+}
+
+.header-page-section-menu-practice-area-dropdown-box-left-content,
+.header-page-section-menu-area-we-serve-dropdown-box-right-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.header-page-section-menu-practice-area-dropdown-box-left-content-submenu,
+.header-page-section-menu-area-we-serve-dropdown-box-left-content-submenu {
+  border: 1px solid #627a93;
+  height: fit-content;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+}
+
+.header-page-section-menu-practice-area-dropdown-box-left-content-submenu p,
+.header-page-section-menu-area-we-serve-dropdown-box-left-content-submenu p {
+  font-size: 14px;
+  line-height: 2rem;
+}
+
+/* our team sub menu */
+.header-page-section-menu-our-team-dropdown-box {
+  left: 25%;
+  z-index: 99;
+  padding: 1rem 2rem;
+  width: fit-content;
+}
+
+.header-page-section-menu-our-team-dropdown-box p {
+  line-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* area we serve sub menu */
+.header-page-section-menu-area-we-serve-dropdown-box-left-inner-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header-page-section-menu-area-we-serve-dropdown-box-left-inner-content p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 2rem;
+  font-size: 16px;
+}
+
+.submenu-back-button {
+  display: none;
+}
+
 /* Media queries for mobile */
 @media (max-width: 768px) {
   .header-page-section-container {
@@ -96,11 +192,12 @@
     left: -100%;
     background-color: #fff;
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
     transition: left 0.5s ease;
+    overflow-x: hidden;
   }
 
   .header-page-section-mobile-contact-informations {
@@ -147,6 +244,41 @@
     border-radius: 50px;
     padding: 15px 0;
     font-size: 18px;
+  }
+
+  /* submenus css */
+  .header-page-section-menu-practice-area-dropdown-box,
+  .header-page-section-menu-our-team-dropdown-box,
+  .header-page-section-menu-area-we-serve-dropdown-box {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header-page-section-menu-practice-area-dropdown-box.practice-open,
+  .header-page-section-menu-our-team-dropdown-box.our-team-open,
+  .header-page-section-menu-area-we-serve-dropdown-box.area-we-serve-open {
+    top: 0;
+    left: 0;
+  }
+  .submenu-back-button {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+  .header-page-section-menu-area-we-serve-dropdown-box-content,
+  .header-page-section-menu-practice-area-dropdown-box-content {
+    gap: 20px;
+  }
+  .header-page-section-menu-practice-area-dropdown-box-left-content,
+  .header-page-section-menu-area-we-serve-dropdown-box-right-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .header-page-section-menu-area-we-serve-dropdown-box-left-inner-content {
+    grid-template-columns: 1fr;
   }
 }
 
