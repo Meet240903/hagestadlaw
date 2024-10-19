@@ -254,6 +254,7 @@
     padding: 1rem;
     width: 100%;
     height: 100%;
+    box-shadow: none;
   }
 
   .header-page-section-menu-practice-area-dropdown-box.practice-open,
