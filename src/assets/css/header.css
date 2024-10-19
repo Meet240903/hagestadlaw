@@ -96,6 +96,7 @@
   z-index: 99;
   padding: 1rem 7rem;
   transition: top 0.3s ease; /* Change bottom to top */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
 }
 
 .header-page-section-menu-practice-area-dropdown-box.practice-open,
