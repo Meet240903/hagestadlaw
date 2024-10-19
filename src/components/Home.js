@@ -14,7 +14,10 @@ const Home = () => {
             <HomePageLegalServiceSection />
             <HomePageMiddleSection />
             <HomePageTeamSection />
-            <HomePageBottomSection />
+            <HomePageBottomSection
+                content1="At HagEstad Law Group, PLLC, we are here to help you with all your legal needs."
+                content2="We understand that legal issues can be complex and overwhelming, but you don't have to navigate them alone!"
+            />
         </>
     )
 }

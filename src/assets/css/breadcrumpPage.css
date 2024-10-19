@@ -1,0 +1,58 @@
+.breadcrump-page-section-container {
+  background-image: url("../images/breadcrumpBgImg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 7rem;
+  color: #fff;
+}
+
+.breadcrump-page-section-container p {
+  font-size: 18px;
+}
+
+.breadcrump-page-section-container h1 {
+  margin: 3rem 0;
+  font-size: 70px;
+  font-weight: normal;
+}
+
+.breadcrump-page-section-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.breadcrump-page-section-buttons button {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 10px 40px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .breadcrump-page-section-container {
+    padding: 1rem;
+  }
+
+  .breadcrump-page-section-container p {
+    font-size: 16px;
+  }
+
+  .breadcrump-page-section-container h1 {
+    margin: 0;
+    margin-top: 4rem;
+    font-size: 40px;
+    font-weight: normal;
+  }
+  .breadcrump-page-section-buttons {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 2rem;
+  }
+  .breadcrump-page-section-buttons::-webkit-scrollbar {
+    display: none;
+  }
+}

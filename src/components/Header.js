@@ -187,9 +187,11 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <p
-                        onMouseEnter={() => { setShowPracticeAreaMenu(false); setShowOurTeamMenu(false) }}
-                    >Cases</p>
+                    <Link to='/cases' target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                        <p
+                            onMouseEnter={() => { setShowPracticeAreaMenu(false); setShowOurTeamMenu(false) }}
+                        >Cases</p>
+                    </Link>
                     <p
                         onMouseEnter={() => { setShowAeraWeServeMenu(false); setShowOurTeamMenu(true); setShowPracticeAreaMenu(false) }}
                     >Our Team <FontAwesomeIcon icon={faChevronDown} style={{ fontSize: '10px' }} /></p>
@@ -271,9 +273,11 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <p
-                        onMouseEnter={() => { setShowAeraWeServeMenu(false); setShowOurTeamMenu(false); setShowPracticeAreaMenu(false) }}
-                    >Contact Us</p>
+                    <Link to='/contact-us' target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                        <p
+                            onMouseEnter={() => { setShowAeraWeServeMenu(false); setShowOurTeamMenu(false); setShowPracticeAreaMenu(false) }}
+                        >Contact Us</p>
+                    </Link>
                     <div className='header-page-section-mobile-button'>
                         <button>Free Consultation</button>
                     </div>

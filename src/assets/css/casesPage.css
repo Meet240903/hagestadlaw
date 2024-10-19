@@ -1,0 +1,48 @@
+.cases-page-section-container {
+  max-width: 1300px;
+  margin: 5rem auto;
+}
+
+.cases-page-section-content-boxs {
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  padding: 2rem !important;
+  transition: 0.3s ease-in-out;
+}
+
+.cases-page-section-content-boxs button {
+  background-color: #f9f9f9;
+  border: 1px solid #ededed;
+  border-radius: 25px;
+  padding: 10px 30px;
+  font-size: 17px;
+  margin-bottom: 2rem;
+}
+
+.cases-page-section-content-boxs h1 {
+  font-weight: normal;
+  margin-bottom: 2rem;
+  transition: 0.3s ease-in-out;
+}
+
+.cases-page-section-content-boxs:hover {
+  border-color: #000;
+  cursor: pointer;
+}
+
+.cases-page-section-content-boxs:hover .cases-title {
+  color: #627a93;
+}
+
+@media (max-width: 768px) {
+  .cases-page-section-container {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  .cases-page-section-content-boxs {
+    padding: 1rem !important;
+  }
+  .cases-page-section-content-boxs p {
+    text-align: justify;
+  }
+}
