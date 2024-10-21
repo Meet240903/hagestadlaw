@@ -1,0 +1,73 @@
+.our-staff-page-section-container {
+  max-width: 1100px;
+  margin: 5rem 0 5rem 5rem;
+}
+
+.our-staff-page-section-top-body h1 {
+  font-weight: normal;
+  font-size: 50px;
+  margin-bottom: 2rem;
+}
+
+.our-staff-page-section-top-body-content {
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.our-staff-page-section-top-body-left-content img {
+  height: 400px;
+  border-radius: 20px;
+  width: 300px;
+}
+
+.our-staff-page-section-top-body-right-content {
+  padding: 2rem !important;
+}
+
+.our-staff-page-section-top-body-right-content h3 {
+  font-weight: normal;
+  font-size: 32px;
+}
+
+.our-staff-page-section-top-body-right-content p {
+  font-size: 18px;
+}
+
+.our-staff-page-section-intern-section {
+  margin-top: 5rem;
+}
+
+.our-staff-page-section-intern-section h1 {
+  font-weight: normal;
+  font-size: 50px;
+}
+
+.our-staff-page-section-intern-section p {
+  font-size: 18px;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .our-staff-page-section-container {
+    margin: 0;
+    padding: 1rem;
+  }
+  .our-staff-page-section-top-body-right-content,
+  .our-staff-page-section-top-body-left-content {
+    padding: 0 !important;
+  }
+  .our-staff-page-section-top-body-content {
+    gap: 20px;
+  }
+  .our-staff-page-section-top-body h1 {
+    font-size: 45px;
+  }
+  .our-staff-page-section-top-body-right-content h3 {
+    font-size: 26px;
+    margin: 1rem 0;
+  }
+  .our-staff-page-section-top-body-right-content p {
+    font-size: 16px;
+    text-align: justify;
+  }
+}

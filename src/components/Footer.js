@@ -3,6 +3,7 @@ import '../assets/css/footer.css'
 import footerLogo from '../assets/images/footerLogo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const montanaData = [
@@ -38,7 +39,9 @@ const Footer = () => {
                         <img src={footerLogo} className='img-fluid' alt='footer-logo' />
                         <div className='footer-page-section-main-left-menu-content'>
                             <p>Blog</p>
-                            <p>Contact Us</p>
+                            <Link to='/contact-us' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
+                                <p>Contact Us</p>
+                            </Link>
                         </div>
                         <button><FontAwesomeIcon icon={faFacebookF} /></button>
                     </div>
@@ -62,7 +65,9 @@ const Footer = () => {
                         </div>
                         <div className='footer-page-section-main-left-mobile-menu-content'>
                             <p>Blog</p>
-                            <p>Contact Us</p>
+                            <Link to='/contact-us' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
+                                <p>Contact Us</p>
+                            </Link>
                         </div>
                     </div>
                     <div className='col-md-2 footer-page-section-main-right-content'>

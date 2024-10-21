@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faBars, faTimes, faChevronDown, faChevronRight, faArrowRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import '../assets/css/header.css';
 import { Link } from 'react-router-dom';
+import ourTeamDropDownData from '../data/OurTeamDropdownData';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,13 +55,6 @@ const Header = () => {
         },
     ];
 
-    const ourTeamDropDownData = [
-        { title: "G. Patrick HagEstad" },
-        { title: "David J. HagEstad" },
-        { title: "Brien B. Birge" },
-        { title: "Our Staff" },
-    ]
-
     const areaWeServeArizonaDropDownData = [
         {
             title: "Buckeye",
@@ -108,7 +102,7 @@ const Header = () => {
         <>
             <div className='header-page-section-container'>
                 <div className='header-page-section-logo'>
-                    <Link to='/'>
+                    <Link to='/' target='_top'>
                         <img src={headerLogo} className='img-fluid' alt='header-logo' />
                     </Link>
                 </div>
@@ -203,13 +197,14 @@ const Header = () => {
                         ><FontAwesomeIcon icon={faChevronLeft} style={{ fontSize: '12px' }} /> Back to the Menu</h5>
                         {
                             ourTeamDropDownData?.map((data, index) => (
-                                <p key={index}
-                                    style={{
-                                        fontWeight: index === ourTeamDropDownData?.length - 1 ? 'bold' : '',
-                                    }}
-                                >{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                <Link to={`/our-team/${data?.slugs}`} target='_top' key={index} style={{ textDecoration: 'none', color: '#000' }} onClick={() => setShowOurTeamMenu(false)}>
+                                    <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                </Link>
                             ))
                         }
+                        <Link to='/our-staff' target='_top' style={{ textDecoration: 'none', color: '#000' }} onClick={() => setShowOurTeamMenu(false)}>
+                            <p className='fw-bold'>Our Staff <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                        </Link>
                     </div>
                     <p
                         onMouseEnter={() => { setShowAeraWeServeMenu(true); setShowOurTeamMenu(false); setShowPracticeAreaMenu(false) }}

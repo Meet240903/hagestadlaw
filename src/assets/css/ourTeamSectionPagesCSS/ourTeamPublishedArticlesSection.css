@@ -1,0 +1,62 @@
+.our-team-page-published-articles-section-container {
+  background-color: #ececec;
+  padding: 7rem 0;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.our-team-page-published-articles-section-title {
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.our-team-page-published-articles-section-title h1 {
+  font-weight: normal;
+  font-size: 50px;
+}
+
+.our-team-page-published-articles-section-content {
+  max-width: 1300px;
+  margin: 2rem auto !important;
+}
+
+.our-team-page-published-articles-section-content-boxs {
+  padding: 0;
+  padding: 10px;
+}
+
+.our-team-page-published-articles-section-content-boxs-content {
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.our-team-page-published-articles-section-content-boxs-content h2 {
+  font-weight: normal;
+  font-size: 40px;
+  transition: 0.3s ease-in-out;
+}
+
+.our-team-page-published-articles-section-content-boxs-content:hover
+  .article-box-title {
+  color: #627a93;
+}
+
+@media (max-width: 768px) {
+  .our-team-page-published-articles-section-container {
+    padding: 3rem 1rem;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  .our-team-page-published-articles-section-title h1 {
+    font-size: 40px;
+  }
+  .our-team-page-published-articles-section-content-boxs-content h2 {
+    font-size: 30px;
+  }
+  .our-team-page-published-articles-section-content-boxs {
+    padding: 1rem 0 !important;
+  }
+}
