@@ -6,7 +6,7 @@ import sectionImg3 from '../../assets/images/homeImgs/legalServiceImgs/sectionIm
 import sectionImg4 from '../../assets/images/homeImgs/legalServiceImgs/sectionImg4.jpg'
 import HomePageContactSection from './HomePageContactSection'
 
-const HomePageLegalServiceSection = () => {
+const HomePageLegalServiceSection = ({ sectionData, serviceContactData }) => {
     const titleData = [
         {
             title: "Estate & Probate Law",
@@ -55,7 +55,7 @@ const HomePageLegalServiceSection = () => {
             arizonaService: true,
         },
     ]
-    const [serviceData, setServiceData] = useState(titleData[0])
+    const [serviceData, setServiceData] = useState(sectionData ? sectionData[0] : titleData[0])
     return (
         <>
             <div className='home-page-legal-service-section-container'>
@@ -65,14 +65,33 @@ const HomePageLegalServiceSection = () => {
                     </div>
                     <div className='home-page-legal-service-section-title-right-content'>
                         {
-                            titleData?.map((data, index) => (
-                                <button key={index} onClick={() => setServiceData(titleData[index])}
-                                    style={{
-                                        backgroundColor: serviceData?.title === data?.title ? '#627a93' : '',
-                                        color: serviceData?.title === data?.title ? '#fff' : '',
-                                    }}
-                                >{data?.title}</button>
-                            ))
+                            sectionData ? (
+                                <>
+                                    {
+                                        sectionData?.map((data, index) => (
+                                            <button key={index} onClick={() => setServiceData(sectionData[index])}
+                                                style={{
+                                                    backgroundColor: serviceData?.title === data?.title ? '#627a93' : '',
+                                                    color: serviceData?.title === data?.title ? '#fff' : '',
+                                                }}
+                                            >{data?.title}</button>
+                                        ))
+                                    }
+                                </>
+                            ) : (
+                                <>
+                                    {
+                                        titleData?.map((data, index) => (
+                                            <button key={index} onClick={() => setServiceData(titleData[index])}
+                                                style={{
+                                                    backgroundColor: serviceData?.title === data?.title ? '#627a93' : '',
+                                                    color: serviceData?.title === data?.title ? '#fff' : '',
+                                                }}
+                                            >{data?.title}</button>
+                                        ))
+                                    }
+                                </>
+                            )
                         }
                     </div>
                 </div>
@@ -84,19 +103,10 @@ const HomePageLegalServiceSection = () => {
                         <div className='home-page-legal-service-section-right-inner-content'>
                             <h1>{serviceData?.title}</h1>
                             <p className='service-section-right-inner-content-para'>{serviceData?.content}</p>
-                            <div className='home-page-legal-service-section-right-inner-bottom-content'>
-                                <div className='home-page-legal-service-section-right-inner-bottom-left-content'>
-                                    <h4>in Montana</h4>
-                                    {
-                                        serviceData?.montanaSerivce?.map((data, index) => (
-                                            <p key={index}>{data?.title}</p>
-                                        ))
-                                    }
-                                    <a href='#'>All Montana {serviceData?.title} Services</a>
-                                </div>
-                                {
-                                    serviceData?.arizonaService === true && <div className='home-page-legal-service-section-right-inner-bottom-left-content'>
-                                        <h4>in Arizona</h4>
+                            {
+                                !sectionData && <div className='home-page-legal-service-section-right-inner-bottom-content'>
+                                    <div className='home-page-legal-service-section-right-inner-bottom-left-content'>
+                                        <h4>in Montana</h4>
                                         {
                                             serviceData?.montanaSerivce?.map((data, index) => (
                                                 <p key={index}>{data?.title}</p>
@@ -104,13 +114,24 @@ const HomePageLegalServiceSection = () => {
                                         }
                                         <a href='#'>All Montana {serviceData?.title} Services</a>
                                     </div>
-                                }
-                            </div>
+                                    {
+                                        serviceData?.arizonaService === true && <div className='home-page-legal-service-section-right-inner-bottom-left-content'>
+                                            <h4>in Arizona</h4>
+                                            {
+                                                serviceData?.montanaSerivce?.map((data, index) => (
+                                                    <p key={index}>{data?.title}</p>
+                                                ))
+                                            }
+                                            <a href='#'>All Montana {serviceData?.title} Services</a>
+                                        </div>
+                                    }
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
                 <div className='home-page-legal-service-section-contact-container'>
-                    <HomePageContactSection />
+                    <HomePageContactSection serviceContactData={serviceContactData} />
                 </div>
             </div>
         </>

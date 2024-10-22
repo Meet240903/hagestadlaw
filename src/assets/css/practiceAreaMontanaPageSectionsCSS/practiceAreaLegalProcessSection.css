@@ -1,0 +1,81 @@
+.practice-area-montana-legal-process-section-container {
+  background-color: #ececec;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  padding: 7rem;
+}
+
+.practice-area-montana-legal-process-section-content {
+  padding: 0 !important;
+}
+
+.practice-area-montana-legal-process-section-left-content h1 {
+  font-weight: normal;
+  font-size: 50px;
+}
+
+.practice-area-montana-legal-process-section-left-content h1 span {
+  font-style: italic;
+}
+
+.practice-area-montana-legal-process-section-left-content p {
+  font-size: 18px;
+  margin: 2rem 0;
+}
+
+.practice-area-montana-legal-process-section-left-content img {
+  width: 100%;
+  border-radius: 30px;
+  height: 500px;
+}
+
+.practice-area-montana-legal-process-section-right-content {
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.practice-area-montana-legal-process-section-right-content-boxs {
+  background-color: #fff;
+  border-radius: 32px;
+  padding: 32px;
+  max-width: 530px;
+  margin: 0 0 0 auto;
+}
+
+.practice-area-montana-legal-process-section-right-content-boxs h2 {
+  font-weight: normal;
+  font-size: 34px;
+}
+.practice-area-montana-legal-process-section-right-content-boxs p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .practice-area-montana-legal-process-section-container {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 2rem 1rem;
+  }
+  .practice-area-montana-legal-process-section-left-content {
+    padding: 0 !important;
+  }
+  .practice-area-montana-legal-process-section-left-content h1 {
+    font-size: 40px;
+  }
+  .practice-area-montana-legal-process-section-left-content p {
+    margin: 1rem 0;
+    font-size: 16px;
+  }
+  .practice-area-montana-legal-process-section-left-content img {
+    height: 200px;
+  }
+
+  .practice-area-montana-legal-process-section-content {
+    gap: 30px;
+  }
+  .practice-area-montana-legal-process-section-right-content-boxs h2 {
+    font-size: 30px;
+  }
+}

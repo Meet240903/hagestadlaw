@@ -1,0 +1,67 @@
+/* Base container styling */
+.practice-area-faq-section-container {
+  padding: 7rem;
+  background-image: url("../../images/montanaPagesImgs/faqSectionBgImg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.practice-area-faq-section-left-content h1 {
+  font-weight: normal;
+  font-size: 45px;
+}
+
+.practice-area-faq-section-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.practice-area-faq-section-right-content-accordion-boxs {
+  background-color: transparent;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  padding: 30px;
+  cursor: pointer;
+}
+
+.practice-area-faq-section-right-content-accordion-boxs-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.practice-area-faq-section-right-content-accordion-boxs-title h3 {
+  font-weight: normal;
+  font-size: 35px;
+  max-width: 95%;
+}
+
+/* Accordion content with slide animation */
+.practice-area-faq-section-right-content-accordion-boxs p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.8s ease, opacity 0.8s ease; /* Animate height and opacity */
+}
+
+.practice-area-faq-section-right-content-accordion-boxs.active p {
+  max-height: 1000px; /* Set a large enough value to fit content */
+  opacity: 1;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .practice-area-faq-section-container {
+    padding: 1rem;
+    background-position: right;
+    background-size: contain;
+  }
+  .practice-area-faq-section-content {
+    gap: 20px;
+  }
+  .practice-area-faq-section-right-content-accordion-boxs-title h3 {
+    font-size: 20px;
+  }
+}

@@ -52,14 +52,14 @@
   max-width: 1300px;
   margin: 2rem auto;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 30px;
 }
 
 .home-page-reviews-section-content-box {
   background-color: #fff;
   width: 450px;
-  height: 450px;
+  height: max-content;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;

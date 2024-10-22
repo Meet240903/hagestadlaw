@@ -8,7 +8,7 @@ import sectionImg5 from '../../assets/images/homeImgs/teamSectionImgs/sectionImg
 import sectionImg6 from '../../assets/images/homeImgs/teamSectionImgs/sectionImg6.webp'
 import sectionImg7 from '../../assets/images/homeImgs/teamSectionImgs/sectionImg7.webp'
 
-const HomePageTeamSection = () => {
+const HomePageTeamSection = ({ sectionData }) => {
     const teamMemberData = [
         {
             sectionImg: sectionImg1,
@@ -79,10 +79,23 @@ const HomePageTeamSection = () => {
                         }
                     </div>
                     <div className='col-md-6 home-page-team-section-right-content'>
-                        <h1><span>Expertise In Action:</span>
-                            Meet The HagEstad Law Group, PLLC Attorneys</h1>
-                        <p>At HagEstad Law Group, PLLC, our skilled attorneys are dedicated to delivering exceptional legal services, utilizing the latest technology to offer efficient and cost-effective solutions tailored to your unique needs.</p>
-                        <p>Our proven track record of success, no-nonsense approach, and focus on achieving results ensure the best possible outcome. With a strong network of professional relationships, we are well-equipped to serve you. Communication and transparency are paramount, keeping you informed and engaged throughout the legal process.</p>
+                        {
+                            sectionData ? (
+                                <>
+                                    <h1><span>Meet Our Missoula, MT </span>
+                                        {sectionData?.title} Attorneys</h1>
+                                    <p>At HagEstad Law Group, PLLC, our skilled attorneys are dedicated to delivering exceptional legal services, utilizing the latest technology to offer efficient and cost-effective solutions tailored to your unique needs.</p>
+                                    <p>{sectionData?.content}</p>
+                                </>
+                            ) : (
+                                <>
+                                    <h1><span>Expertise In Action:</span>
+                                        Meet The HagEstad Law Group, PLLC Attorneys</h1>
+                                    <p>At HagEstad Law Group, PLLC, our skilled attorneys are dedicated to delivering exceptional legal services, utilizing the latest technology to offer efficient and cost-effective solutions tailored to your unique needs.</p>
+                                    <p>Our proven track record of success, no-nonsense approach, and focus on achieving results ensure the best possible outcome. With a strong network of professional relationships, we are well-equipped to serve you. Communication and transparency are paramount, keeping you informed and engaged throughout the legal process.</p>
+                                </>
+                            )
+                        }
                         <div className='home-page-team-section-right-content-box'>
                             <div className='home-page-team-section-right-content-inner-box'>
                                 <h2>Saved Millions</h2>

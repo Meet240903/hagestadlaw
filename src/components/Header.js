@@ -5,6 +5,7 @@ import { faPhone, faBars, faTimes, faChevronDown, faChevronRight, faArrowRight, 
 import '../assets/css/header.css';
 import { Link } from 'react-router-dom';
 import ourTeamDropDownData from '../data/OurTeamDropdownData';
+import practiceAreaDropDownData from '../data/PracticeAreaDropDownData';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,41 +20,6 @@ const Header = () => {
         setShowOurTeamMenu(false);
         setShowPracticeAreaMenu(false);
     };
-
-    const practiceAreaDropDownData = [
-        {
-            title: "Estates & Trusts",
-            icon: faChevronRight,
-            subDropDownData: [
-                { title: "Estate Planning" },
-                { title: "Probate & Estate Administration" },
-                { title: "Estate Litigation" },
-            ]
-        },
-        {
-            title: "Civil Litigation",
-            icon: faChevronRight,
-            subDropDownData: [
-                { title: "Bad Faith" },
-                { title: "Dram Shop Defense" },
-                { title: "Professional Negligence" },
-                { title: "Insurance Defense" },
-            ]
-        },
-        {
-            title: "Business Law",
-            icon: faChevronRight,
-            subDropDownData: [
-                { title: "Business Litigation & Disputes" },
-                { title: "Business Contracts" },
-            ]
-        },
-        {
-            title: "Real Estate Law",
-            icon: faArrowRight,
-            iconRotate: true,
-        },
-    ];
 
     const areaWeServeArizonaDropDownData = [
         {
@@ -137,21 +103,22 @@ const Header = () => {
                                     <h3>Montana</h3>
                                     {
                                         practiceAreaDropDownData?.map((data, index) => (
-                                            <p
-                                                key={index}
-                                                onMouseEnter={() => setHoveredTitle(data?.subDropDownData ? index : null)}
-                                            // Set the hovered title
-                                            >
-                                                {data?.title}
-                                                <FontAwesomeIcon
-                                                    icon={data?.icon}
-                                                    style={{
-                                                        fontSize: data?.iconRotate ? '14px' : '10px',
-                                                        margin: '0',
-                                                        transform: data?.iconRotate ? 'rotate(-40deg)' : ''
-                                                    }}
-                                                />
-                                            </p>
+                                            <Link to={`/${data?.slugs}`} key={index} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                                                <p
+                                                    onMouseEnter={() => setHoveredTitle(data?.subDropDownData ? index : null)}
+                                                // Set the hovered title
+                                                >
+                                                    {data?.title}
+                                                    <FontAwesomeIcon
+                                                        icon={data?.icon}
+                                                        style={{
+                                                            fontSize: data?.iconRotate ? '14px' : '10px',
+                                                            margin: '0',
+                                                            transform: data?.iconRotate ? 'rotate(-40deg)' : ''
+                                                        }}
+                                                    />
+                                                </p>
+                                            </Link>
                                         ))
                                     }
                                 </div>
@@ -165,7 +132,7 @@ const Header = () => {
                                         practiceAreaDropDownData?.map((data, index) => (
                                             hoveredTitle === index && data?.subDropDownData && ( // Check if subDropDownData exists
                                                 data?.subDropDownData?.map((subData, subIndex) => (
-                                                    <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                    <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
                                                 ))
                                             )
                                         ))
@@ -198,12 +165,12 @@ const Header = () => {
                         {
                             ourTeamDropDownData?.map((data, index) => (
                                 <Link to={`/our-team/${data?.slugs}`} target='_top' key={index} style={{ textDecoration: 'none', color: '#000' }} onClick={() => setShowOurTeamMenu(false)}>
-                                    <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                    <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} className='header-right-arrow' style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
                                 </Link>
                             ))
                         }
                         <Link to='/our-staff' target='_top' style={{ textDecoration: 'none', color: '#000' }} onClick={() => setShowOurTeamMenu(false)}>
-                            <p className='fw-bold'>Our Staff <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                            <p className='fw-bold'>Our Staff <FontAwesomeIcon className='header-right-arrow' icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
                         </Link>
                     </div>
                     <p

@@ -29,6 +29,7 @@
 .home-page-legal-service-section-title-right-content {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
   width: 100%;
 }

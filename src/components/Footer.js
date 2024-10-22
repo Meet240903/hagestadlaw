@@ -38,7 +38,9 @@ const Footer = () => {
                     <div className='col-md-2 footer-page-section-main-left-content'>
                         <img src={footerLogo} className='img-fluid' alt='footer-logo' />
                         <div className='footer-page-section-main-left-menu-content'>
-                            <p>Blog</p>
+                            <Link to='/blog' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
+                                <p>Blog</p>
+                            </Link>
                             <Link to='/contact-us' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
                                 <p>Contact Us</p>
                             </Link>
@@ -64,7 +66,9 @@ const Footer = () => {
                             }
                         </div>
                         <div className='footer-page-section-main-left-mobile-menu-content'>
-                            <p>Blog</p>
+                            <Link to='/blog' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
+                                <p>Blog</p>
+                            </Link>
                             <Link to='/contact-us' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
                                 <p>Contact Us</p>
                             </Link>

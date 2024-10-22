@@ -4,8 +4,8 @@ import sectionImg2 from '../../assets/images/homeImgs/middleSectionImgs/sectionI
 import sectionImg3 from '../../assets/images/homeImgs/middleSectionImgs/sectionImg3.svg'
 import '../../assets/css/homePageSectionCSS/homePageMiddleSection.css'
 
-const HomePageMiddleSection = () => {
-    const sectionData = [
+const HomePageMiddleSection = ({ sectionData }) => {
+    const MiddlesectionData = [
         {
             sectionImg: sectionImg1,
             title: "Experienced",
@@ -24,19 +24,53 @@ const HomePageMiddleSection = () => {
     ]
     return (
         <>
-            <div className='home-page-middle-section-container'>
+            <div className='home-page-middle-section-container'
+                style={{
+                    backgroundImage: sectionData?.bgImg
+                        ? `url(${sectionData.bgImg})` : '',
+                }}
+            >
                 <div className='home-page-middle-section-title'>
-                    <h1>Why Put Your <span>Trust In Us?</span></h1>
+                    {
+                        sectionData ? (
+                            <>
+                                <h1>{sectionData?.title}<span>{sectionData?.subTitle}</span></h1>
+                                <p>{sectionData?.content}</p>
+                            </>
+                        ) : (
+                            <>
+                                <h1>Why Put Your <span>Trust In Us?</span></h1>
+                            </>
+                        )
+                    }
                 </div>
                 <div className='home-page-middle-section-content'>
                     {
-                        sectionData?.map((data, index) => (
-                            <div className='home-page-middle-section-content-box' key={index}>
-                                <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
-                                <h3>{data?.title}</h3>
-                                <p>{data?.content}</p>
-                            </div>
-                        ))
+                        sectionData ? (
+                            <>
+                                {
+                                    sectionData?.innerSectionData?.map((data, index) => (
+                                        <div className='home-page-middle-section-content-box' key={index}>
+                                            <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
+                                            <h3>{data?.title}</h3>
+                                            <p>{data?.content}</p>
+                                        </div>
+                                    ))
+                                }
+                            </>
+                        ) : (
+                            <>
+                                {
+                                    MiddlesectionData?.map((data, index) => (
+                                        <div className='home-page-middle-section-content-box' key={index}>
+                                            <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
+                                            <h3>{data?.title}</h3>
+                                            <p>{data?.content}</p>
+                                        </div>
+                                    ))
+                                }
+                            </>
+                        )
                     }
                 </div>
             </div>

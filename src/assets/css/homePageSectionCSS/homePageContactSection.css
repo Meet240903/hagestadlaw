@@ -10,6 +10,10 @@
   gap: 20px;
 }
 
+.home-page-legal-service-section-contact-left-content {
+  max-width: 500px;
+}
+
 .home-page-section-contact-informations {
   display: flex;
   align-items: center;
@@ -62,7 +66,7 @@
   .home-page-section-contact-informations {
     gap: 10px;
   }
-  .home-page-legal-service-section-contact-right-content-contact-information{
+  .home-page-legal-service-section-contact-right-content-contact-information {
     gap: 10px;
   }
 }

@@ -7,8 +7,8 @@ import sectionImg4 from '../../assets/images/homeImgs/reviewSectionImgs/sectionI
 import sectionImg5 from '../../assets/images/homeImgs/reviewSectionImgs/sectionImg5.png'
 import sectionImg6 from '../../assets/images/homeImgs/reviewSectionImgs/sectionImg6.svg'
 
-const HomePageReviewSection = () => {
-    const sectionData = [
+const HomePageReviewSection = ({ sectionData }) => {
+    const reveiwSectionData = [
         {
             sectionImg: sectionImg1,
             content: "30 reviews",
@@ -58,7 +58,7 @@ const HomePageReviewSection = () => {
                     </div>
                     <div className='home-page-reviews-section-title-right-content'>
                         {
-                            sectionData?.map((data, index) => (
+                            reveiwSectionData?.map((data, index) => (
                                 <div className='home-page-reviews-section-title-right-content-boxs' key={index}>
                                     <img src={data?.sectionImg} className='reviews-section-title-right-content-boxs-logo-img' alt='section-img' />
                                     <div className='home-page-reviews-section-title-right-content-inner-boxs'>
@@ -74,13 +74,31 @@ const HomePageReviewSection = () => {
                 </div>
                 <div className='home-page-reviews-section-content'>
                     {
-                        reviewData?.map((data, index) => (
-                            <div className='home-page-reviews-section-content-box' key={index}>
-                                <p className='review-qoute'>“</p>
-                                <p>{data?.content}</p>
-                                <small>{data?.userName}</small>
-                            </div>
-                        ))
+                        sectionData ? (
+                            <>
+                                {
+                                    sectionData?.map((data, index) => (
+                                        <div className='home-page-reviews-section-content-box' key={index}>
+                                            <p className='review-qoute'>“</p>
+                                            <p>{data?.content}</p>
+                                            <small>{data?.userName}</small>
+                                        </div>
+                                    ))
+                                }
+                            </>
+                        ) : (
+                            <>
+                                {
+                                    reviewData?.map((data, index) => (
+                                        <div className='home-page-reviews-section-content-box' key={index}>
+                                            <p className='review-qoute'>“</p>
+                                            <p>{data?.content}</p>
+                                            <small>{data?.userName}</small>
+                                        </div>
+                                    ))
+                                }
+                            </>
+                        )
                     }
                 </div>
             </div>

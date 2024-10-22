@@ -10,6 +10,10 @@
   margin-bottom: 2rem;
 }
 
+.our-team-page-articles-section-content {
+  row-gap: 40px;
+}
+
 .our-team-page-articles-section-left-content h2 {
   font-weight: normal;
   font-size: 40px;

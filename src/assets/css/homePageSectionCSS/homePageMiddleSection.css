@@ -30,7 +30,12 @@
 }
 
 .home-page-middle-section-title {
-  width: 300px;
+  max-width: 600px;
+}
+
+.home-page-middle-section-title p {
+  font-size: 18px;
+  margin-top: 2rem;
 }
 
 .home-page-middle-section-title h1 {
@@ -45,7 +50,7 @@
 .home-page-middle-section-content {
   display: flex;
   align-items: center;
-  margin-top: 14rem;
+  margin-top: 10rem;
   justify-content: space-between;
 }
 
@@ -72,7 +77,7 @@
     border-top-right-radius: 20px;
   }
   .home-page-middle-section-title {
-    width: 250px;
+    width: 100%;
   }
 
   .home-page-middle-section-title h1 {

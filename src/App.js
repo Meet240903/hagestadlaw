@@ -6,6 +6,8 @@ import CasesPage from "./components/CasesPage";
 import ContactUs from "./components/ContactUs";
 import OurTeam from "./components/OurTeam";
 import OurStaffPage from "./components/OurStaffPage";
+import BlogPage from "./components/BlogPage";
+import PracticeAreaMontanaPage from "./components/PracticeAreaMontanaPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route exact path="/contact-us" element={<ContactUs />} />
           <Route exact path="/our-team/:slugs" element={<OurTeam />} />
           <Route exact path="/our-staff" element={<OurStaffPage />} />
+          <Route exact path="/blog" element={<BlogPage />} />
+          <Route exact path="/:slugs" element={<PracticeAreaMontanaPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

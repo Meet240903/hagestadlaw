@@ -178,6 +178,13 @@
   display: none;
 }
 
+.header-page-section-menu-our-team-dropdown-box p:hover .header-right-arrow,
+.header-page-section-menu-practice-area-dropdown-box-left-content-submenu
+  p:hover
+  .header-right-arrow {
+  transform: rotate(0) !important;
+}
+
 /* Media queries for mobile */
 @media (max-width: 768px) {
   .header-page-section-container {
