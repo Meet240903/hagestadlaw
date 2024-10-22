@@ -1,0 +1,157 @@
+.practice-area-page-benifits-section-container {
+  padding: 7rem;
+}
+
+.practice-area-page-benifits-section-left-content img {
+  width: 100%;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+}
+
+.practice-area-page-benifits-section-left-content h1 {
+  font-weight: normal;
+  font-size: 50px;
+}
+
+.practice-area-page-benifits-section-left-content p {
+  font-size: 18px;
+}
+
+.practice-area-page-benifits-section-left-content ul li {
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+.practice-area-page-benifits-section-left-content-box {
+  border-radius: 30px;
+  background: linear-gradient(91.94deg, #627a93 19.16%, #39648f 92.32%);
+  color: #fff;
+  margin-top: 5rem;
+  padding: 30px;
+  width: 100%;
+}
+
+.practice-area-page-benifits-section-left-content-box p {
+  font-size: 20px;
+  margin: 2rem 0;
+}
+
+.practice-area-page-benifits-section-left-content-box-inner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.practice-area-page-benifits-section-left-content-box-inner-content button,
+.practice-area-page-benifits-section-right-inner-content-box-inner-content
+  button {
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50px;
+  padding: 25px 35px;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+
+.practice-area-page-benifits-section-left-content-box-inner-content
+  button:hover,
+.practice-area-page-benifits-section-right-inner-content-box-inner-content
+  button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.practice-area-page-benifits-section-left-content-box-contact-informations,
+.practice-area-page-benifits-section-right-inner-content-box-contact-informations {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.practice-area-page-benifits-section-left-content-box-contact-informations
+  button,
+.practice-area-page-benifits-section-right-inner-content-box-contact-informations
+  button {
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff4d;
+  color: #fff;
+  padding: 8px 13px;
+}
+
+.practice-area-page-benifits-section-left-content-box-contact-informations
+  button:hover,
+.practice-area-page-benifits-section-right-inner-content-box-contact-informations
+  button:hover {
+  background-color: #4a5f75;
+}
+
+.practice-area-page-benifits-section-left-content-box-contact-informations p {
+  font-size: 16px !important;
+}
+
+.practice-area-page-benifits-section-right-content-box {
+  max-width: 410px;
+  margin: 0 0 0 auto;
+  position: sticky;
+  top: 100px;
+}
+
+.practice-area-page-benifits-section-right-content-box img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.practice-area-page-benifits-section-right-inner-content-box {
+  border-radius: 30px;
+  background: linear-gradient(91.94deg, #627a93 19.16%, #39648f 92.32%);
+  color: #fff;
+  padding: 30px;
+  width: 100%;
+}
+
+.practice-area-page-benifits-section-right-inner-content-box h1 {
+  font-weight: normal;
+}
+
+.practice-area-page-benifits-section-right-inner-content-box p {
+  font-size: 18px;
+  margin: 1.5rem 0;
+}
+
+.practice-area-page-benifits-section-right-inner-content-box-inner-content
+  button {
+  width: 100%;
+}
+
+.practice-area-page-benifits-section-right-inner-content-box-contact-informations
+  button {
+  width: fit-content;
+}
+
+.practice-area-page-benifits-section-right-inner-content-box-contact-informations {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .practice-area-page-benifits-section-container {
+    padding: 1rem;
+  }
+  .practice-area-page-benifits-section-left-content-box {
+    display: none;
+  }
+  .practice-area-page-benifits-section-content {
+    gap: 30px;
+  }
+  .practice-area-page-benifits-section-left-content h1 {
+    font-size: 40px;
+  }
+  .practice-area-page-benifits-section-left-content ul li {
+    font-size: 16px;
+    line-height: 1.8rem;
+  }
+  .practice-area-page-benifits-section-right-content-box img {
+    display: none;
+  }
+}

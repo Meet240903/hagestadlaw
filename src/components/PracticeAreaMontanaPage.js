@@ -9,21 +9,38 @@ import HomePageBottomSection from './homePageSections/HomePageBottomSection'
 import HomePageMiddleSection from './homePageSections/HomePageMiddleSection'
 import PracticeAreaMontanaLegalProcessSection from './practiceAreaMontanaPageSections/PracticeAreaMontanaLegalProcessSection'
 import PracticeAreaFAQSection from './practiceAreaMontanaPageSections/PracticeAreaFAQSection'
+import PracticeAreaBenifitsSection from './practiceAreaMontanaPageSections/PracticeAreaBenifitsSection'
 
 const PracticeAreaMontanaPage = () => {
     const { slugs } = useParams()
-    const data = practiceAreaDropDownData?.find(index => index?.slugs === slugs)
+    let data = practiceAreaDropDownData?.find(index => index?.slugs === slugs)
+    if (!data) {
+        const parentData = practiceAreaDropDownData?.find(index =>
+            index?.subDropDownData?.some(subIndex => subIndex?.slugs === slugs)
+        );
+
+        if (parentData) {
+            data = parentData?.subDropDownData?.find(subIndex => subIndex?.slugs === slugs);
+        }
+    }
 
     return (
         <>
             <PracticeAreaMontanaTopSection sectionData={data} />
             <HomePageReviewSection sectionData={data?.reviewSectionData} />
-            <HomePageLegalServiceSection sectionData={data?.serviceSectionData} serviceContactData={data?.serviceContactSectionData} />
+            {
+                data?.serviceSectionData && <HomePageLegalServiceSection sectionData={data?.serviceSectionData} serviceContactData={data?.serviceContactSectionData} />
+            }
+            {
+                data?.benifitSectionData && <PracticeAreaBenifitsSection sectionData={data?.benifitSectionData} />
+            }
             <PracticeAreaMontanaLegalProcessSection sectionData={data?.legalProcessSectionData} />
             <HomePageMiddleSection sectionData={data?.middleSectionData} />
             <HomePageTeamSection sectionData={data?.teamSectionData} />
             <HomePageBottomSection />
-            <PracticeAreaFAQSection sectionData={data?.faqSectionData} />
+            {
+                data?.faqSectionData && <PracticeAreaFAQSection sectionData={data?.faqSectionData} />
+            }
         </>
     )
 }

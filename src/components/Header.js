@@ -121,7 +121,9 @@ const Header = () => {
                                                 <div className='header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu'>
                                                     {
                                                         data?.subDropDownData?.map((data, index) => (
-                                                            <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                            <Link to={`/${data?.slugs}`} key={index} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                                                                <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                            </Link>
                                                         ))
                                                     }
                                                 </div>
@@ -139,7 +141,9 @@ const Header = () => {
                                         practiceAreaDropDownData?.map((data, index) => (
                                             hoveredTitle === index && data?.subDropDownData && ( // Check if subDropDownData exists
                                                 data?.subDropDownData?.map((subData, subIndex) => (
-                                                    <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                    <Link to={`/${subData?.slugs}`} key={index} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                                                        <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                    </Link>
                                                 ))
                                             )
                                         ))
