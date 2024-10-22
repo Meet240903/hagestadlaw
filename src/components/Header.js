@@ -118,6 +118,13 @@ const Header = () => {
                                                         }}
                                                     />
                                                 </p>
+                                                <div className='header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu'>
+                                                    {
+                                                        data?.subDropDownData?.map((data, index) => (
+                                                            <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                        ))
+                                                    }
+                                                </div>
                                             </Link>
                                         ))
                                     }
@@ -198,21 +205,29 @@ const Header = () => {
                                     <h3>Ariozona</h3>
                                     {
                                         areaWeServeArizonaDropDownData?.map((data, index) => (
-                                            <p
-                                                key={index}
-                                                onMouseEnter={() => setHoveredTitle(data?.subMenuData ? index : null)}
-                                            // Set the hovered title
-                                            >
-                                                {data?.title}
-                                                <FontAwesomeIcon
-                                                    icon={faChevronRight}
-                                                    style={{
-                                                        fontSize: data?.iconRotate ? '14px' : '10px',
-                                                        margin: '0',
-                                                        transform: data?.iconRotate ? 'rotate(-40deg)' : ''
-                                                    }}
-                                                />
-                                            </p>
+                                            <div key={index}>
+                                                <p
+                                                    onMouseEnter={() => setHoveredTitle(data?.subMenuData ? index : null)}
+                                                // Set the hovered title
+                                                >
+                                                    {data?.title}
+                                                    <FontAwesomeIcon
+                                                        icon={faChevronRight}
+                                                        style={{
+                                                            fontSize: data?.iconRotate ? '14px' : '10px',
+                                                            margin: '0',
+                                                            transform: data?.iconRotate ? 'rotate(-40deg)' : ''
+                                                        }}
+                                                    />
+                                                </p>
+                                                <div className='header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu'>
+                                                    {
+                                                        data?.subMenuData?.map((data, index) => (
+                                                            <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
                                         ))
                                     }
                                 </div>

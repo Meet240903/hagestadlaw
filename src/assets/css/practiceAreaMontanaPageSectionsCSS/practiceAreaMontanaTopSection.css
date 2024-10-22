@@ -24,7 +24,8 @@
   font-style: italic;
 }
 
-.practice-area-montana-page-top-section-content p {
+.practice-area-montana-page-top-section-content p,
+.practice-area-montana-page-top-section-content p a {
   font-size: 18px;
 }
 

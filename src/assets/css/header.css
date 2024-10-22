@@ -185,6 +185,10 @@
   transform: rotate(0) !important;
 }
 
+.header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu {
+  display: none;
+}
+
 /* Media queries for mobile */
 @media (max-width: 768px) {
   .header-page-section-container {
@@ -262,6 +266,23 @@
     width: 100%;
     height: 100%;
     box-shadow: none;
+  }
+
+  .header-page-section-menu-practice-area-dropdown-box-left-content-submenu,
+  .header-page-section-menu-area-we-serve-dropdown-box-left-content-submenu {
+    display: none;
+  }
+  .header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu {
+    display: block;
+    margin-left: 20px;
+  }
+
+  .header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu
+    p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 2.5rem;
   }
 
   .header-page-section-menu-practice-area-dropdown-box.practice-open,

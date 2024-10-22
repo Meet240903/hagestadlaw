@@ -6,12 +6,12 @@ const PracticeAreaMontanaTopSection = ({ sectionData }) => {
     return (
         <>
             <div className='practice-area-montana-page-top-section-container'>
-                <p>
-                    <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}>
-                        Home
-                    </Link> / MT {sectionData?.title}
-                </p>
                 <div className='practice-area-montana-page-top-section-content'>
+                    <p>
+                        <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}>
+                            Home
+                        </Link> / MT {sectionData?.title}
+                    </p>
                     <h1>{sectionData?.topSectionData?.title} <span className='title-span'>{sectionData?.topSectionData?.subTitle}</span></h1>
                     <p>{sectionData?.topSectionData?.content}</p>
                 </div>
