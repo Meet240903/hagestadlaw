@@ -6,6 +6,7 @@ import '../assets/css/header.css';
 import { Link } from 'react-router-dom';
 import ourTeamDropDownData from '../data/OurTeamDropdownData';
 import practiceAreaDropDownData from '../data/PracticeAreaDropDownData';
+import practiceAreaArizonaDropdownData from '../data/PracticeAreaArizonaDropdownData';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -153,9 +154,13 @@ const Header = () => {
                             </div>
                             <div className='col-md-6 header-page-section-menu-practice-area-dropdown-box-right-content'>
                                 <h3>Arizona</h3>
-                                <p>Estates & Trusts <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
-                                <p>Business Law <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
-                                <p>Real Estate Law <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                {
+                                    practiceAreaArizonaDropdownData?.map((data, index) => (
+                                        <Link to={`/${data?.slugs}`} key={index} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                                            <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                        </Link>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>

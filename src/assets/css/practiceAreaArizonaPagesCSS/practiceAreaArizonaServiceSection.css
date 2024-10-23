@@ -1,0 +1,45 @@
+.practice-area-arizona-service-section-container {
+  background-image: url("../../images/homeImgs/legalServiceImgs/sectionBgImg.png");
+  background-position: right;
+  background-size: auto;
+  background-repeat: no-repeat;
+  padding: 7rem;
+}
+
+.practice-area-arizona-service-section-title {
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.practice-area-arizona-service-section-title h1 {
+  font-weight: normal;
+  font-size: 46px;
+}
+
+.practice-area-arizona-service-section-title h1 span {
+  font-style: italic;
+}
+
+.practice-area-arizona-service-section-content {
+  row-gap: 4rem;
+}
+
+.practice-area-arizona-service-section-content-boxs img {
+  width: 100%;
+  border-radius: 32px;
+  margin-bottom: 2rem;
+}
+
+.practice-area-arizona-service-section-content-boxs h1 {
+  font-weight: normal;
+  font-size: 40px;
+}
+
+@media (max-width: 768px) {
+  .practice-area-arizona-service-section-container {
+    padding: 1rem;
+  }
+  .practice-area-arizona-service-section-content-boxs {
+    padding: 0 !important;
+  }
+}

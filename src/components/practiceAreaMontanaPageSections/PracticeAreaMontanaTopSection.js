@@ -10,7 +10,7 @@ const PracticeAreaMontanaTopSection = ({ sectionData }) => {
                     <p>
                         <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}>
                             Home
-                        </Link> / MT {sectionData?.title}
+                        </Link> / {sectionData?.type ? sectionData?.type : 'MT'} {sectionData?.title}
                     </p>
                     <h1>{sectionData?.topSectionData?.title} <span className='title-span'>{sectionData?.topSectionData?.subTitle}</span></h1>
                     <p>{sectionData?.topSectionData?.content}</p>

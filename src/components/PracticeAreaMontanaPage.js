@@ -10,6 +10,8 @@ import HomePageMiddleSection from './homePageSections/HomePageMiddleSection'
 import PracticeAreaMontanaLegalProcessSection from './practiceAreaMontanaPageSections/PracticeAreaMontanaLegalProcessSection'
 import PracticeAreaFAQSection from './practiceAreaMontanaPageSections/PracticeAreaFAQSection'
 import PracticeAreaBenifitsSection from './practiceAreaMontanaPageSections/PracticeAreaBenifitsSection'
+import practiceAreaArizonaDropdownData from '../data/PracticeAreaArizonaDropdownData'
+import PracticeAreaArizonaServiceSection from './practiceAreaArizonaSectionPages/PracticeAreaArizonaServiceSection'
 
 const PracticeAreaMontanaPage = () => {
     const { slugs } = useParams()
@@ -21,6 +23,8 @@ const PracticeAreaMontanaPage = () => {
 
         if (parentData) {
             data = parentData?.subDropDownData?.find(subIndex => subIndex?.slugs === slugs);
+        } else {
+            data = practiceAreaArizonaDropdownData?.find(index => index?.slugs === slugs);
         }
     }
 
@@ -28,6 +32,9 @@ const PracticeAreaMontanaPage = () => {
         <>
             <PracticeAreaMontanaTopSection sectionData={data} />
             <HomePageReviewSection sectionData={data?.reviewSectionData} />
+            {
+                data?.arizonaServiceSectionData && <PracticeAreaArizonaServiceSection contactSectionData={data?.arizonaServiceContactSectionData} sectionData={data?.arizonaServiceSectionData} title={data?.title} />
+            }
             {
                 data?.serviceSectionData && <HomePageLegalServiceSection sectionData={data?.serviceSectionData} serviceContactData={data?.serviceContactSectionData} />
             }
