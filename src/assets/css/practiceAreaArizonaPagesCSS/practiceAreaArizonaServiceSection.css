@@ -42,4 +42,10 @@
   .practice-area-arizona-service-section-content-boxs {
     padding: 0 !important;
   }
+  .practice-area-arizona-service-section-title h1 {
+    font-size: 36px;
+  }
+  .practice-area-arizona-service-section-content-boxs h1 {
+    font-size: 32px;
+  }
 }
