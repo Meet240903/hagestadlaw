@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import ourTeamDropDownData from '../data/OurTeamDropdownData';
 import practiceAreaDropDownData from '../data/PracticeAreaDropDownData';
 import practiceAreaArizonaDropdownData from '../data/PracticeAreaArizonaDropdownData';
+import areaWeServeArizonaDropDownData from '../data/AreaWeServeArizonaDropDownData';
+import areaWeServeMontanaDropDownData from '../data/AreaWeServeMontanaDropDownData';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,49 +23,6 @@ const Header = () => {
         setShowOurTeamMenu(false);
         setShowPracticeAreaMenu(false);
     };
-
-    const areaWeServeArizonaDropDownData = [
-        {
-            title: "Buckeye",
-            subMenuData: [
-                { title: "Buckeye Estate Planning Lawyers" },
-                { title: "Buckeye Estate & Probate Lawyers" },
-                { title: "Buckeye Real Estate Lawyers" },
-            ]
-        },
-        {
-            title: "Phoenix",
-            subMenuData: [
-                { title: "Phoenix Real Estate Lawyers" },
-                { title: "Phoenix Business Lawyers" },
-                { title: "Phoenix Estate & Probate Lawyers" },
-            ]
-        },
-        {
-            title: "Sun City",
-            subMenuData: [
-                { title: "Sun City Estate Planning Lawyers" },
-            ]
-        },
-        {
-            title: "Surprise",
-            subMenuData: [
-                { title: "Surprise Estate Planning Lawyers" },
-                { title: "Surprise Probate Lawyers" },
-                { title: "Surprise Wills & Trust Lawyers" },
-            ]
-        },
-    ]
-
-    const areaWeServeMontanaDropDownData = [
-        { title: "Billings Trusts & Estates Lawyers" },
-        { title: "Butte Trusts & Estates Lawyers" },
-        { title: "Great Falls Trusts & Estates Lawyers" },
-        { title: "Helena Trusts & Estates Lawyers" },
-        { title: "Kalispell Trusts & Estates Lawyers" },
-        { title: "Missoula Trusts & Estates Lawyers" },
-        { title: "Whitefish Trusts & Estates Lawyers" },
-    ]
 
     return (
         <>
@@ -123,7 +82,7 @@ const Header = () => {
                                                     {
                                                         data?.subDropDownData?.map((data, index) => (
                                                             <Link to={`/${data?.slugs}`} key={index} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
-                                                                <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                                <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
                                                             </Link>
                                                         ))
                                                     }
@@ -142,8 +101,8 @@ const Header = () => {
                                         practiceAreaDropDownData?.map((data, index) => (
                                             hoveredTitle === index && data?.subDropDownData && ( // Check if subDropDownData exists
                                                 data?.subDropDownData?.map((subData, subIndex) => (
-                                                    <Link to={`/${subData?.slugs}`} key={index} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
-                                                        <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                    <Link to={`/${subData?.slugs}`} key={subIndex} target='_top' style={{ textDecoration: 'none', color: '#000' }}>
+                                                        <p>{subData?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
                                                     </Link>
                                                 ))
                                             )
@@ -204,7 +163,9 @@ const Header = () => {
                                 <div className='header-page-section-menu-area-we-serve-dropdown-box-left-inner-content'>
                                     {
                                         areaWeServeMontanaDropDownData?.map((data, index) => (
-                                            <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                            <Link to={`/${data?.slugs}`} target='_top' key={index} style={{ textDecoration: 'none', color: '#000' }} onClick={() => setShowAeraWeServeMenu(false)}>
+                                                <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                            </Link>
                                         ))
                                     }
                                 </div>
@@ -232,7 +193,9 @@ const Header = () => {
                                                 <div className='header-page-section-menu-practice-area-dropdown-box-left-content-mobile-submenu'>
                                                     {
                                                         data?.subMenuData?.map((data, index) => (
-                                                            <p key={index}>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                            <Link to={`/${data?.slugs}`} target='_top' key={index} style={{ textDecoration: 'none', color: '#000' }}>
+                                                                <p>{data?.title} <FontAwesomeIcon icon={faArrowRight} className={`${data?.iconRotate ? 'header-right-arrow' : ''}`} style={{ fontSize: '10px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                            </Link>
                                                         ))
                                                     }
                                                 </div>
@@ -250,7 +213,9 @@ const Header = () => {
                                         areaWeServeArizonaDropDownData?.map((data, index) => (
                                             hoveredTitle === index && data?.subMenuData && ( // Check if subDropDownData exists
                                                 data?.subMenuData?.map((subData, subIndex) => (
-                                                    <p key={subIndex}>{subData?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                    <Link to={`/${subData?.slugs}`} target='_top' key={subIndex} style={{ textDecoration: 'none', color: '#000' }} onClick={() => setShowAeraWeServeMenu(false)}>
+                                                        <p>{subData?.title} <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: '14px', margin: '0', transform: 'rotate(-40deg)' }} /></p>
+                                                    </Link>
                                                 ))
                                             )
                                         ))

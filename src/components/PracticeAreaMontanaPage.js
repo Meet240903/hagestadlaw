@@ -12,10 +12,18 @@ import PracticeAreaFAQSection from './practiceAreaMontanaPageSections/PracticeAr
 import PracticeAreaBenifitsSection from './practiceAreaMontanaPageSections/PracticeAreaBenifitsSection'
 import practiceAreaArizonaDropdownData from '../data/PracticeAreaArizonaDropdownData'
 import PracticeAreaArizonaServiceSection from './practiceAreaArizonaSectionPages/PracticeAreaArizonaServiceSection'
+import areaWeServeMontanaDropDownData from '../data/AreaWeServeMontanaDropDownData'
+import areaWeServeArizonaDropDownData from '../data/AreaWeServeArizonaDropDownData'
 
 const PracticeAreaMontanaPage = () => {
-    const { slugs } = useParams()
-    let data = practiceAreaDropDownData?.find(index => index?.slugs === slugs)
+    const { slugs } = useParams();
+
+    let data;
+
+    if (practiceAreaDropDownData) {
+        data = practiceAreaDropDownData?.find(index => index?.slugs === slugs);
+    }
+
     if (!data) {
         const parentData = practiceAreaDropDownData?.find(index =>
             index?.subDropDownData?.some(subIndex => subIndex?.slugs === slugs)
@@ -23,8 +31,28 @@ const PracticeAreaMontanaPage = () => {
 
         if (parentData) {
             data = parentData?.subDropDownData?.find(subIndex => subIndex?.slugs === slugs);
-        } else {
-            data = practiceAreaArizonaDropdownData?.find(index => index?.slugs === slugs);
+        }
+    }
+
+    if (!data && practiceAreaArizonaDropdownData) {
+        data = practiceAreaArizonaDropdownData?.find(index => index?.slugs === slugs);
+    }
+
+    if (!data && areaWeServeMontanaDropDownData) {
+        data = areaWeServeMontanaDropDownData?.find(index => index?.slugs === slugs);
+    }
+
+    if (!data && areaWeServeArizonaDropDownData) {
+        data = areaWeServeArizonaDropDownData?.find(index => index?.slugs === slugs);
+    }
+
+    if (!data) {
+        const parentData = areaWeServeArizonaDropDownData?.find(index =>
+            index?.subMenuData?.some(subIndex => subIndex?.slugs === slugs)
+        );
+
+        if (parentData) {
+            data = parentData?.subMenuData?.find(subIndex => subIndex?.slugs === slugs);
         }
     }
 
