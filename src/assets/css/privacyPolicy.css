@@ -1,0 +1,23 @@
+.privacy-policy-page-section-container {
+  max-width: 1300px;
+  margin: 5rem auto;
+}
+
+.privacy-policy-page-section-content h1 {
+  font-size: 46px;
+  font-weight: normal;
+}
+
+.privacy-policy-page-section-content p {
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy-page-section-content h1 {
+    font-size: 36px;
+  }
+  .privacy-policy-page-section-content p {
+    text-align: justify;
+  }
+}

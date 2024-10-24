@@ -8,6 +8,8 @@ import OurTeam from "./components/OurTeam";
 import OurStaffPage from "./components/OurStaffPage";
 import BlogPage from "./components/BlogPage";
 import PracticeAreaMontanaPage from "./components/PracticeAreaMontanaPage";
+import LegalDesclaimer from "./components/LegalDesclaimer";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route exact path="/our-staff" element={<OurStaffPage />} />
           <Route exact path="/blog" element={<BlogPage />} />
           <Route exact path="/:slugs" element={<PracticeAreaMontanaPage />} />
+          <Route exact path="/disclaimer" element={<LegalDesclaimer />} />
+          <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -95,8 +95,12 @@ const Footer = () => {
                 <div className='footer-page-section-bottom-content'>
                     <p>© 2024 HagEstad Law Group, PLLC.</p>
                     <div className='footer-page-section-bottom-inner-content'>
-                        <p>Legal Disclaimer</p>
-                        <p>Privacy Policy</p>
+                        <Link to='/disclaimer' style={{ color: 'gray', textDecoration: 'none' }} target='_top'>
+                            <p>Legal Disclaimer</p>
+                        </Link>
+                        <Link to='/privacy-policy' style={{ color: 'gray', textDecoration: 'none' }} target='_top'>
+                            <p>Privacy Policy</p>
+                        </Link>
                     </div>
                     <p>Powered by Grow Law Firm Marketing Agency</p>
                 </div>

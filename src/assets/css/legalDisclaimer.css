@@ -1,0 +1,16 @@
+.legal-disclaimer-page-section-container {
+  max-width: 1300px;
+  margin: 5rem auto;
+}
+
+.legal-disclaimer-page-section-content p {
+  font-size: 18px;
+  color: #434d48;
+  line-height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .legal-disclaimer-page-section-content p {
+    text-align: justify;
+  }
+}
