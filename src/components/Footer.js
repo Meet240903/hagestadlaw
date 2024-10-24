@@ -7,29 +7,29 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const montanaData = [
-        { content: "Trusts & Estates Attorney in Helena, MT" },
-        { content: "Trusts & Estates Attorney In Butte, MT" },
-        { content: "Trusts & Estates Attorney in Kalispell, MT" },
-        { content: "Trusts & Estates Attorney in Missoula, MT" },
-        { content: "Trusts & Estates Attorney In Great Falls, MT" },
-        { content: "Trusts & Estates Attorney in Hamilton, MT" },
-        { content: "Trusts & Estates Attorney in Bozeman, MT" },
-        { content: "Trusts & Estates Attorney In Billings, MT" },
-        { content: "Seasoned Trusts & Estates Attorney in Polson, MT" },
-        { content: "Trusts & Estates Attorney in Bigfork, MT" },
-        { content: "Trusts & Estates Attorney in Whitefish, MT" },
+        { content: "Trusts & Estates Attorney in Helena, MT", slugs: "helena-trusts-estates" },
+        { content: "Trusts & Estates Attorney In Butte, MT", slugs: "butte-trusts-estates" },
+        { content: "Trusts & Estates Attorney in Kalispell, MT", slugs: "kalispell-trusts-estates" },
+        { content: "Trusts & Estates Attorney in Missoula, MT", slugs: "missoula-trusts-estates" },
+        { content: "Trusts & Estates Attorney In Great Falls, MT", slugs: "great-falls-trusts-estates" },
+        { content: "Trusts & Estates Attorney in Hamilton, MT", slugs: "missoula-trusts-estates" },
+        { content: "Trusts & Estates Attorney in Bozeman, MT", slugs: "kalispell-trusts-estates" },
+        { content: "Trusts & Estates Attorney In Billings, MT", slugs: "billings-trusts-estates" },
+        { content: "Seasoned Trusts & Estates Attorney in Polson, MT", slugs: "helena-trusts-estates" },
+        { content: "Trusts & Estates Attorney in Bigfork, MT", slugs: "butte-trusts-estates" },
+        { content: "Trusts & Estates Attorney in Whitefish, MT", slugs: "whitefish-trusts-estates" },
     ]
     const arizonaData = [
-        { content: "Phoenix Estate & Probate Lawyers" },
-        { content: "Phoenix Business Lawyers" },
-        { content: "Phoenix Real Estate Lawyers" },
-        { content: "Buckeye Estate Planning Lawyers" },
-        { content: "Buckeye Probate & Estate Lawyers" },
-        { content: "Buckeye Real Estate Lawyers" },
-        { content: "Surprise Estate Planning Attorneys" },
-        { content: "Surprise Probate Lawyers" },
-        { content: "Surprise Wills & Trust Attorneys" },
-        { content: "Sun City Estate Lawyers" },
+        { content: "Phoenix Estate & Probate Lawyers", slugs: "phoenix-estate-probate-lawyers" },
+        { content: "Phoenix Business Lawyers", slugs: "phoenix-business-lawyers" },
+        { content: "Phoenix Real Estate Lawyers", slugs: "phoenix-real-estate-lawyers" },
+        { content: "Buckeye Estate Planning Lawyers", slugs: "buckeye-estate-planning" },
+        { content: "Buckeye Probate & Estate Lawyers", slugs: "buckeye-probate-estate-planning-attorneys" },
+        { content: "Buckeye Real Estate Lawyers", slugs: "buckeye-real-estate-lawyers" },
+        { content: "Surprise Estate Planning Attorneys", slugs: "surprise-arizona-estate-planning-attorneys" },
+        { content: "Surprise Probate Lawyers", slugs: "surprise-probate-attorneys" },
+        { content: "Surprise Wills & Trust Attorneys", slugs: "surprise-wills-trusts-attorneys" },
+        { content: "Sun City Estate Lawyers", slugs: "sun-city-wills-trusts-and-estates-attorneys" },
     ]
     return (
         <>
@@ -53,7 +53,9 @@ const Footer = () => {
                         <div className='footer-page-section-main-middle-inner-content'>
                             {
                                 montanaData?.map((data, index) => (
-                                    <p key={index}>{data?.content}</p>
+                                    <Link to={`/${data?.slugs}`} style={{ color: '#000', textDecoration: 'none' }} target='_top' key={index}>
+                                        <p>{data?.content}</p>
+                                    </Link>
                                 ))
                             }
                         </div>
@@ -61,7 +63,9 @@ const Footer = () => {
                         <div className='footer-page-section-main-middle-inner-content1'>
                             {
                                 arizonaData?.map((data, index) => (
-                                    <p key={index}>{data?.content}</p>
+                                    <Link to={`/${data?.slugs}`} style={{ color: '#000', textDecoration: 'none' }} target='_top' key={index}>
+                                        <p>{data?.content}</p>
+                                    </Link>
                                 ))
                             }
                         </div>
