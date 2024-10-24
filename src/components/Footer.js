@@ -36,7 +36,9 @@ const Footer = () => {
             <div className='footer-page-section-container'>
                 <div className='row mx-0 footer-page-section-main-content'>
                     <div className='col-md-2 footer-page-section-main-left-content'>
-                        <img src={footerLogo} className='img-fluid' alt='footer-logo' />
+                        <Link to='/' target='_top'>
+                            <img src={footerLogo} className='img-fluid' alt='footer-logo' />
+                        </Link>
                         <div className='footer-page-section-main-left-menu-content'>
                             <Link to='/blog' style={{ color: '#000', textDecoration: 'none' }} target='_top'>
                                 <p>Blog</p>

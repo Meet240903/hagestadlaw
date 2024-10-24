@@ -1,10 +1,13 @@
 .practice-area-montana-page-top-section-container {
-  background-image: url("../../images/breadcrumpBgImg.jpg");
-  background-position: center;
-  background-size: cover;
+  background-image: 
+    url("../../images/montanaPagesImgs/topSectionBgImg.svg"), /* Overlay image */
+    url("../../images/breadcrumpBgImg.jpg"); /* Original background image */
+  background-position: right,center;
+  background-size: auto,cover;
   background-repeat: no-repeat;
   padding: 5rem 0 2rem 5rem;
 }
+
 
 .practice-area-montana-page-top-section-container p {
   color: #fff;
