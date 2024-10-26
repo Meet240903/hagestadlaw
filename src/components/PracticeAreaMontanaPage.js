@@ -14,6 +14,7 @@ import practiceAreaArizonaDropdownData from '../data/PracticeAreaArizonaDropdown
 import PracticeAreaArizonaServiceSection from './practiceAreaArizonaSectionPages/PracticeAreaArizonaServiceSection'
 import areaWeServeMontanaDropDownData from '../data/AreaWeServeMontanaDropDownData'
 import areaWeServeArizonaDropDownData from '../data/AreaWeServeArizonaDropDownData'
+import FadeAnimation from './FadeAnimation'
 
 const PracticeAreaMontanaPage = () => {
     const { slugs } = useParams();
@@ -59,19 +60,29 @@ const PracticeAreaMontanaPage = () => {
     return (
         <>
             <PracticeAreaMontanaTopSection sectionData={data} />
-            <HomePageReviewSection sectionData={data?.reviewSectionData} />
+            <FadeAnimation direction="up" duration="1.5s">
+                <HomePageReviewSection sectionData={data?.reviewSectionData} />
+            </FadeAnimation>
             {
-                data?.arizonaServiceSectionData && <PracticeAreaArizonaServiceSection contactSectionData={data?.arizonaServiceContactSectionData} sectionData={data?.arizonaServiceSectionData} title={data?.title} />
+                data?.arizonaServiceSectionData && <FadeAnimation direction="up" duration="1.5s">
+                    <PracticeAreaArizonaServiceSection contactSectionData={data?.arizonaServiceContactSectionData} sectionData={data?.arizonaServiceSectionData} title={data?.title} />
+                </FadeAnimation>
             }
             {
-                data?.serviceSectionData && <HomePageLegalServiceSection sectionData={data?.serviceSectionData} serviceContactData={data?.serviceContactSectionData} />
+                data?.serviceSectionData && <FadeAnimation direction="up" duration="1.5s"><HomePageLegalServiceSection sectionData={data?.serviceSectionData} serviceContactData={data?.serviceContactSectionData} />
+                </FadeAnimation>
             }
             {
-                data?.benifitSectionData && <PracticeAreaBenifitsSection sectionData={data?.benifitSectionData} />
+                data?.benifitSectionData && <FadeAnimation direction="up" duration="1.5s"><PracticeAreaBenifitsSection sectionData={data?.benifitSectionData} />
+                </FadeAnimation>
             }
-            <PracticeAreaMontanaLegalProcessSection sectionData={data?.legalProcessSectionData} />
+            <FadeAnimation direction="up" duration="1.5s">
+                <PracticeAreaMontanaLegalProcessSection sectionData={data?.legalProcessSectionData} />
+            </FadeAnimation>
             <HomePageMiddleSection sectionData={data?.middleSectionData} />
-            <HomePageTeamSection sectionData={data?.teamSectionData} />
+            <FadeAnimation direction="up" duration="1.5s">
+                <HomePageTeamSection sectionData={data?.teamSectionData} />
+            </FadeAnimation>
             <HomePageBottomSection />
             {
                 data?.faqSectionData && <PracticeAreaFAQSection sectionData={data?.faqSectionData} />

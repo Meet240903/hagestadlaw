@@ -3,6 +3,7 @@ import sectionImg1 from '../../assets/images/homeImgs/middleSectionImgs/sectionI
 import sectionImg2 from '../../assets/images/homeImgs/middleSectionImgs/sectionImg2.svg'
 import sectionImg3 from '../../assets/images/homeImgs/middleSectionImgs/sectionImg3.svg'
 import '../../assets/css/homePageSectionCSS/homePageMiddleSection.css'
+import FadeAnimation from '../FadeAnimation'
 
 const HomePageMiddleSection = ({ sectionData }) => {
     const MiddlesectionData = [
@@ -30,49 +31,51 @@ const HomePageMiddleSection = ({ sectionData }) => {
                         ? `url(${sectionData.bgImg})` : '',
                 }}
             >
-                <div className='home-page-middle-section-title'>
-                    {
-                        sectionData ? (
-                            <>
-                                <h1>{sectionData?.title}<span>{sectionData?.subTitle}</span></h1>
-                                <p>{sectionData?.content}</p>
-                            </>
-                        ) : (
-                            <>
-                                <h1>Why Put Your <span>Trust In Us?</span></h1>
-                            </>
-                        )
-                    }
-                </div>
-                <div className='home-page-middle-section-content'>
-                    {
-                        sectionData ? (
-                            <>
-                                {
-                                    sectionData?.innerSectionData?.map((data, index) => (
-                                        <div className='home-page-middle-section-content-box' key={index}>
-                                            <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
-                                            <h3>{data?.title}</h3>
-                                            <p>{data?.content}</p>
-                                        </div>
-                                    ))
-                                }
-                            </>
-                        ) : (
-                            <>
-                                {
-                                    MiddlesectionData?.map((data, index) => (
-                                        <div className='home-page-middle-section-content-box' key={index}>
-                                            <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
-                                            <h3>{data?.title}</h3>
-                                            <p>{data?.content}</p>
-                                        </div>
-                                    ))
-                                }
-                            </>
-                        )
-                    }
-                </div>
+                <FadeAnimation direction="up" duration="1.5s">
+                    <div className='home-page-middle-section-title'>
+                        {
+                            sectionData ? (
+                                <>
+                                    <h1>{sectionData?.title}<span>{sectionData?.subTitle}</span></h1>
+                                    <p>{sectionData?.content}</p>
+                                </>
+                            ) : (
+                                <>
+                                    <h1>Why Put Your <span>Trust In Us?</span></h1>
+                                </>
+                            )
+                        }
+                    </div>
+                    <div className='home-page-middle-section-content'>
+                        {
+                            sectionData ? (
+                                <>
+                                    {
+                                        sectionData?.innerSectionData?.map((data, index) => (
+                                            <div className='home-page-middle-section-content-box' key={index}>
+                                                <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
+                                                <h3>{data?.title}</h3>
+                                                <p>{data?.content}</p>
+                                            </div>
+                                        ))
+                                    }
+                                </>
+                            ) : (
+                                <>
+                                    {
+                                        MiddlesectionData?.map((data, index) => (
+                                            <div className='home-page-middle-section-content-box' key={index}>
+                                                <img src={data?.sectionImg} className='img-fluid' alt='section-img' />
+                                                <h3>{data?.title}</h3>
+                                                <p>{data?.content}</p>
+                                            </div>
+                                        ))
+                                    }
+                                </>
+                            )
+                        }
+                    </div>
+                </FadeAnimation>
             </div>
         </>
     )

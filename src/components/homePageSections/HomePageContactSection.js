@@ -2,26 +2,29 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import '../../assets/css/homePageSectionCSS/homePageContactSection.css'
+import FadeAnimation from '../FadeAnimation'
 
 const HomePageContactSection = ({ serviceContactData }) => {
     return (
         <>
-            <div className='home-page-legal-service-section-contact-left-content'>
-                {
-                    serviceContactData ? (
-                        <>
-                            <h1>{serviceContactData?.title}</h1>
-                            <p>{serviceContactData?.content}</p>
-                        </>
-                    ) : (
-                        <>
-                            <h1>We Are Here
-                                <br />to Help</h1>
-                            <p>Ready to discuss your legal needs? Let’s get started!</p>
-                        </>
-                    )
-                }
-            </div>
+            <FadeAnimation direction="right" duration="1s">
+                <div className='home-page-legal-service-section-contact-left-content'>
+                    {
+                        serviceContactData ? (
+                            <>
+                                <h1>{serviceContactData?.title}</h1>
+                                <p>{serviceContactData?.content}</p>
+                            </>
+                        ) : (
+                            <>
+                                <h1>We Are Here
+                                    <br />to Help</h1>
+                                <p>Ready to discuss your legal needs? Let’s get started!</p>
+                            </>
+                        )
+                    }
+                </div>
+            </FadeAnimation>
             <div className='home-page-legal-service-section-contact-right-content'>
                 <div className='home-page-legal-service-section-contact-right-content-button'>
                     <button>Free Consultation</button>

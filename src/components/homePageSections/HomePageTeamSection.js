@@ -44,39 +44,39 @@ const HomePageTeamSection = ({ sectionData }) => {
             <div className='home-page-team-section-container'>
                 <div className='row home-page-team-section-content'>
                     <div className='col-md-6 home-page-team-section-left-content'>
-                        {
-                            teamMemberData.map((data, index) => (
-                                <div
-                                    className='home-page-team-section-left-content-box'
-                                    onMouseEnter={() => setHoveredMemberIndex(index)}  // Set the index of the hovered member
-                                    onMouseLeave={() => setHoveredMemberIndex(null)}   // Reset on leave
-                                    key={index}
-                                    style={{
-                                        padding: hoveredMemberIndex === index ? '20px' : '',
-                                    }}
-                                >
-                                    {
-                                        hoveredMemberIndex !== index ? (  // Check if the current member is hovered
-                                            <>
-                                                <div className='home-page-team-section-left-content-box-img'>
-                                                    <img src={data.sectionImg} className='img-fluid' alt='section-img' />
-                                                </div>
-                                                <h1>{data.userName}</h1>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <h1>{data.userName}</h1>
-                                                <ul>
-                                                    {data.contentData.map((contentItem, contentIndex) => (
-                                                        <li key={contentIndex}>{contentItem.content}</li>
-                                                    ))}
-                                                </ul>
-                                            </>
-                                        )
-                                    }
-                                </div>
-                            ))
-                        }
+                            {
+                                teamMemberData.map((data, index) => (
+                                    <div
+                                        className='home-page-team-section-left-content-box'
+                                        onMouseEnter={() => setHoveredMemberIndex(index)}  // Set the index of the hovered member
+                                        onMouseLeave={() => setHoveredMemberIndex(null)}   // Reset on leave
+                                        key={index}
+                                        style={{
+                                            padding: hoveredMemberIndex === index ? '20px' : '',
+                                        }}
+                                    >
+                                        {
+                                            hoveredMemberIndex !== index ? (  // Check if the current member is hovered
+                                                <>
+                                                    <div className='home-page-team-section-left-content-box-img'>
+                                                        <img src={data.sectionImg} className='img-fluid' alt='section-img' />
+                                                    </div>
+                                                    <h1>{data.userName}</h1>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <h1>{data.userName}</h1>
+                                                    <ul>
+                                                        {data.contentData.map((contentItem, contentIndex) => (
+                                                            <li key={contentIndex}>{contentItem.content}</li>
+                                                        ))}
+                                                    </ul>
+                                                </>
+                                            )
+                                        }
+                                    </div>
+                                ))
+                            }
                     </div>
                     <div className='col-md-6 home-page-team-section-right-content'>
                         {
@@ -124,7 +124,7 @@ const HomePageTeamSection = ({ sectionData }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

@@ -2,6 +2,7 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import '../../assets/css/practiceAreaMontanaPageSectionsCSS/practiceAreaMontanaFAQSection.css';
+import FadeAnimation from '../FadeAnimation';
 
 const PracticeAreaFAQSection = ({ sectionData }) => {
     const [activeIndex, setActiveIndex] = useState(null); // Track the currently active accordion item
@@ -15,22 +16,25 @@ const PracticeAreaFAQSection = ({ sectionData }) => {
             <div className='practice-area-faq-section-container'>
                 <div className='row mx-0 p-0 practice-area-faq-section-content'>
                     <div className='col-md-6 p-0 practice-area-faq-section-left-content'>
-                        <h1>FAQ</h1>
+                        <FadeAnimation direction="right" duration="1.5s">
+                            <h1>FAQ</h1>
+                        </FadeAnimation>
                     </div>
                     <div className='col-md-6 p-0 practice-area-faq-section-right-content'>
                         {
                             sectionData?.map((data, index) => (
-                                <div
-                                    className={`practice-area-faq-section-right-content-accordion-boxs ${activeIndex === index ? 'active' : ''}`}
-                                    key={index}
-                                    onClick={() => handleAccordionClick(index)}
-                                >
-                                    <div className='practice-area-faq-section-right-content-accordion-boxs-title'>
-                                        <h3>{data?.title}</h3>
-                                        <FontAwesomeIcon icon={activeIndex === index ? faChevronUp : faChevronDown} />
+                                <FadeAnimation key={index} direction="left" duration="1.5s">
+                                    <div
+                                        className={`practice-area-faq-section-right-content-accordion-boxs ${activeIndex === index ? 'active' : ''}`}
+                                        onClick={() => handleAccordionClick(index)}
+                                    >
+                                        <div className='practice-area-faq-section-right-content-accordion-boxs-title'>
+                                            <h3>{data?.title}</h3>
+                                            <FontAwesomeIcon icon={activeIndex === index ? faChevronUp : faChevronDown} />
+                                        </div>
+                                        <p>{data?.content}</p> {/* Animated content */}
                                     </div>
-                                    <p>{data?.content}</p> {/* Animated content */}
-                                </div>
+                                </FadeAnimation>
                             ))
                         }
                     </div>

@@ -5,15 +5,22 @@ import HomePageLegalServiceSection from './homePageSections/HomePageLegalService
 import HomePageMiddleSection from './homePageSections/HomePageMiddleSection'
 import HomePageTeamSection from './homePageSections/HomePageTeamSection'
 import HomePageBottomSection from './homePageSections/HomePageBottomSection'
+import FadeAnimation from './FadeAnimation'
 
 const Home = () => {
     return (
         <>
             <HomePageTopSection />
-            <HomePageReviewSection />
-            <HomePageLegalServiceSection />
+            <FadeAnimation direction="up" duration="1.5s">
+                <HomePageReviewSection />
+            </FadeAnimation>
+            <FadeAnimation direction="up" duration="1.5s">
+                <HomePageLegalServiceSection />
+            </FadeAnimation>
             <HomePageMiddleSection />
-            <HomePageTeamSection />
+            <FadeAnimation direction="up" duration="1.5s">
+                <HomePageTeamSection />
+            </FadeAnimation>
             <HomePageBottomSection
                 content1="At HagEstad Law Group, PLLC, we are here to help you with all your legal needs."
                 content2="We understand that legal issues can be complex and overwhelming, but you don't have to navigate them alone!"
